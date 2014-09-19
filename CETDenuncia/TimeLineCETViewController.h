@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TimeLineCETViewController.h
 //  CETDenuncia
 //
 //  Created by VINICIUS RESENDE FIALHO on 19/09/14.
@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TimeLineCETViewController : UIViewController
+
+
+@property (weak, nonatomic) IBOutlet UIWebView *TimeLineCETWebView;
+
+
 
 @end
