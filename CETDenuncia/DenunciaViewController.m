@@ -27,6 +27,9 @@
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
+    
+    //[Usuario sharedManager].locUsuario = self.locationManager.location.coordinate;
+    
 }
 
 
