@@ -8,7 +8,6 @@
 
 #import "DataBaseCoordenada.h"
 
-
 @implementation DataBaseCoordenada
 
 
@@ -52,7 +51,6 @@
     NSString *ruaNumero = [NSString stringWithFormat:@"%@",[CoordCet local]];
     
     NSString *s = [NSString stringWithFormat:@"%@%@%@",ruaNumero,@" ",@"São Paulo"];
-    NSLog(@" site cet = %@",s);
     
     [geocoder geocodeAddressString:s completionHandler:^(NSArray* placemarks, NSError* error){
         for (CLPlacemark  *aPlacemark in placemarks) {
@@ -73,12 +71,7 @@
             cordll.longitude = [longitude doubleValue];
             [[[DataBaseCoordenada sharedManager] listaCoordenadasLatLong]addObject:cordll];
             
-//            NSLog(@"lat = %f",cordll.latitude);
-//            NSLog(@"long = %f",cordll.longitude);
-            
             ponto.coordinate = localizacao;
-            
-            
         }
     }];
     

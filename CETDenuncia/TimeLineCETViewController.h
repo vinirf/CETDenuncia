@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimeLineCETViewController : UIViewController
-
+@interface TimeLineCETViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *TimeLineCETWebView;
-
-
 
 @end

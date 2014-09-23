@@ -164,7 +164,7 @@
 			children = (
 				0BB77D7619CCA7A200343AC1 /* Imagens */,
 				0BB77D7919CCA98B00343AC1 /* STTwitters */,
-				0BB77DAC19CCAC9D00343AC1 /* ClassesBasicas */,
+				0BB77DAC19CCAC9D00343AC1 /* Base */,
 				0BB77D4419CCA4DA00343AC1 /* CETDenuncia */,
 				0BB77D6619CCA4DA00343AC1 /* CETDenunciaTests */,
 				0BB77D3D19CCA4DA00343AC1 /* Frameworks */,
@@ -294,7 +294,7 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
-		0BB77DAC19CCAC9D00343AC1 /* ClassesBasicas */ = {
+		0BB77DAC19CCAC9D00343AC1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				0BB77DB719CCB4E500343AC1 /* CoodenadaLatitudeLongitude.h */,
@@ -306,6 +306,7 @@
 				0BB77DAD19CCAC9D00343AC1 /* Usuario.h */,
 				0BB77DAE19CCAC9D00343AC1 /* Usuario.m */,
 			);
+			name = Base;
 			path = ClassesBasicas;
 			sourceTree = "<group>";
 		};

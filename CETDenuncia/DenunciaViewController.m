@@ -65,14 +65,6 @@
     [ceo reverseGeocodeLocation: loc completionHandler:
      ^(NSArray *placemarks, NSError *error) {
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
-         //NSLog(@"placemark %@",placemark);
-         //String to hold address
-         //NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-         //NSLog(@"addressDictionary %@", placemark.addressDictionary);
-         //         NSLog(@"Cidade %@",placemark.locality); // Extract the city name
-         //         NSLog(@"Rua %@",placemark.name);
-         //         NSLog(@"Bairro %@",placemark.subLocality);
-         //NSLog(@"location %@",placemark.location);
          
          self.localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
          
@@ -223,11 +215,9 @@
 //    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
 //    
 //    NSString *stringFinal = substring;
-//    NSLog(@"string %@",stringFinal);
-//    
+//
 //    //    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<b"].location+4];
 //    //    NSString *vra = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</b>"].location-2];
-//    //    NSLog(@"string %@",vra);
 //    
 //}
 
