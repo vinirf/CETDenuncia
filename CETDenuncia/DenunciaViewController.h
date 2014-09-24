@@ -14,15 +14,19 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Usuario.h"
 
-@interface DenunciaViewController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate>
+@interface DenunciaViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate>
 
 
 @property NSString *nomeTwitter;
 @property  NSString *imageString;
 @property  NSString *localizacao;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property MKMapView *mapa;
 @property CLLocationManager *locationManager;
+
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *outBtoDenunciar;
+@property (weak, nonatomic) IBOutlet UIButton *outBtoImagem;
 
 
 @end
