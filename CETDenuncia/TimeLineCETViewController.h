@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimeLineCETViewController : UIViewController <UIWebViewDelegate>
+@interface TimeLineCETViewController : UIViewController
+
 
 @property (weak, nonatomic) IBOutlet UIWebView *TimeLineCETWebView;
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+
 
 @end

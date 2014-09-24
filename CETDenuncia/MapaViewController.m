@@ -98,6 +98,8 @@
     
     NSString *stringFinal = substring;
     
+    //NSLog(@"v = %@",stringFinal );
+    
     //Controla o laco de repeticao
     NSRange continua =[stringFinal rangeOfString:@"<tr class"];
     
@@ -156,6 +158,7 @@
             [[DataBaseCoordenada sharedManager]criaCoordenadaSiteCET: t];
             [self marcarPosicaoNoMapaDiretoSiteCet: t];
         }else{
+            NSLog(@"ja add site");
         }
         
         

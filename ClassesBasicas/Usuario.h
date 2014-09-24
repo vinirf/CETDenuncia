@@ -14,7 +14,9 @@
 @property CLLocationCoordinate2D locUsuario;
 @property NSString *nome;
 
+
 +(Usuario*)sharedManager;
 -(void)setaPosicaoUsuario:(CLLocationCoordinate2D)posUsuario;
+
 
 @end

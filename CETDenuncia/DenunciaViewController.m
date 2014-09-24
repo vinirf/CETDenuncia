@@ -9,51 +9,54 @@
 #import "DenunciaViewController.h"
 
 @interface DenunciaViewController ()
+
 @end
 
 @implementation DenunciaViewController
 
-- (void)viewDidLoad{
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-
-    //Conta CET
+	// Do any additional setup after loading the view, typically from a nib.
+    
     self.nomeTwitter = @"@CETSP_";
     
-    //Localização
+    /////////////
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
     
-    //Arredonda botões
-    [[self.outBtoDenunciar layer] setCornerRadius: 5];
-    [[self.outBtoImagem layer] setCornerRadius: 5];
-
     //[Usuario sharedManager].locUsuario = self.locationManager.location.coordinate;
     
 }
 
 
-- (void)didReceiveMemoryWarning{
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-}
-
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
-    [self pegarLocalizacaoDoUsuario];
-}
-
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+    // Dispose of any resources that can be recreated.
 }
 
 ///////////////////////////////////////////////////////////////////////////
 
 
-- (void)pegarLocalizacaoDoUsuario{
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self locationMana];
+    //[self pegarDadosTransitoCET];
+    
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+}
+
+
+
+- (void)locationMana{
     
     CLGeocoder *ceo = [[CLGeocoder alloc]init];
     CLLocationCoordinate2D coord = [[Usuario sharedManager]locUsuario];
@@ -62,8 +65,18 @@
     [ceo reverseGeocodeLocation: loc completionHandler:
      ^(NSArray *placemarks, NSError *error) {
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
+         //NSLog(@"placemark %@",placemark);
+         //String to hold address
+         //NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+         //NSLog(@"addressDictionary %@", placemark.addressDictionary);
+         //         NSLog(@"Cidade %@",placemark.locality); // Extract the city name
+         //         NSLog(@"Rua %@",placemark.name);
+         //         NSLog(@"Bairro %@",placemark.subLocality);
+         //NSLog(@"location %@",placemark.location);
          
          self.localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
+         
+         
      }];
     
 }
@@ -72,21 +85,27 @@
 - (IBAction)buttonTwetar:(id)sender {
     
     
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
-        
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
+        [tweetSheet setInitialText:@"Tweeting from my own app! :)"];
+        
+        
         [tweetSheet addImage:self.imageView.image];
+        
         
         NSString *endereco = [NSString stringWithFormat:@"%@%@%@%@",self.nomeTwitter,@" ",self.localizacao,@", "];
         [tweetSheet setInitialText:endereco];
-
-        [self presentViewController: tweetSheet animated:YES completion:nil];
+        
+        
+        
+        [self presentViewController:tweetSheet animated:YES completion:nil];
     }
-    else{
+    else
+    {
         UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Descuple"
-                                  message:@"Você não pode enviar um tweet agora, verifique se seu dispositivo está conectado à internet e se você tem pelo menos uma conta do Twitter configurada."
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup"
                                   delegate:self
                                   cancelButtonTitle:@"OK"
                                   otherButtonTitles:nil];
@@ -100,22 +119,26 @@
     
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
     }
-    else{
+    else
+    {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     }
     
     [imagePicker setDelegate:self];
-    [self presentViewController: imagePicker animated:YES completion:nil];
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
     
 }
 
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     self.imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
     [self.imageView setImage:self.imageView.image];
     
     // UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
@@ -125,7 +148,8 @@
     
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {    
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
@@ -184,6 +208,32 @@
 //    
 //    continua = [stringFinal rangeOfString:@"<div class=\"boxZona"];
 //}
+
+
+//-(void)pegarDadosVariadosSP{
+//    
+//    NSString* url = @"http://www.capital.sp.gov.br/portal/";
+//    NSURL* query = [NSURL URLWithString:url];
+//    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
+//    
+//    
+//    NSString *string=result;
+//    NSRange searchFromRange = [string rangeOfString:@""];
+//    NSRange searchToRange = [string rangeOfString:@"<!-- Aeroportos -->"];
+//    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
+//    
+//    NSString *stringFinal = substring;
+//    NSLog(@"string %@",stringFinal);
+//    
+//    //    stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<b"].location+4];
+//    //    NSString *vra = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</b>"].location-2];
+//    //    NSLog(@"string %@",vra);
+//    
+//}
+
+
+
+
 
 
 
