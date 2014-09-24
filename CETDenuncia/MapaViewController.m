@@ -32,6 +32,7 @@
     [self.view addSubview: self.mapa];
     
     [self serializaDadosSiteCET];
+    [self serializaDadosSiteCETLentidao];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -168,6 +169,75 @@
     continua = [stringFinal rangeOfString:@"<tr class"];
     
 }
+
+-(void)serializaDadosSiteCETLentidao{
+    
+    NSString *problema = @"Lentidão por corredor não disponível no momento";
+    NSString* url = @"http://cetsp1.cetsp.com.br/monitransmapa/IMG1/lentidao.asp?ordem=N";
+    NSURL* query = [NSURL URLWithString:url];
+    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
+    
+    int contando =0;
+    while([result rangeOfString:problema].location != NSNotFound){
+        contando += 1;
+        
+        NSString *s = [NSString stringWithFormat:@"%@%d%@",@"http://cetsp1.cetsp.com.br/monitransmapa/IMG",contando,@"/lentidao.asp?ordem=N"];
+        NSURL* query = [NSURL URLWithString:s];
+        result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
+        
+    }
+    
+    
+    NSString *string=result;
+    NSRange searchFromRange = [string rangeOfString:@"<table>"];
+    NSRange searchToRange = [string rangeOfString:@"</body>"];
+    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
+    
+    NSString *stringFinal = substring;
+    
+    NSLog(@"v = %@", stringFinal);
+    
+    //Controla o laco de repeticao
+    NSRange continua = [stringFinal rangeOfString:@"<tr class"];
+    
+    //Faz enquanto encontrar o ultimo #EXTINF:-1,
+    while(continua.location != NSNotFound){
+        
+        //Corredor
+        stringFinal = [stringFinal substringFromIndex: continua.location];
+        stringFinal = [stringFinal substringFromIndex: [stringFinal rangeOfString:@"<td nowrap>"].location+11];
+        NSString *corredor = [stringFinal substringToIndex: [stringFinal rangeOfString:@"</td>"].location-1];
+        
+        //Sentido
+        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+4];
+        NSString *sentido = [stringFinal substringToIndex: [stringFinal rangeOfString:@"</td>"].location-20];
+        
+        //Via
+        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+4];
+        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+21];
+        NSString *via = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</td>"].location-14];
+        
+//        //Local
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+4];
+//        NSString *local = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</td>"].location-20];
+//
+//        //Tamanho
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td align="].location+10];
+//        NSString *tamanho = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</td>"].location-20];
+        
+        NSLog(@"scorr = %@", corredor);
+        NSLog(@"sentido = %@", sentido);
+        NSLog(@"via = %@", via);
+//        NSLog(@"local = %@",local);
+//        NSLog(@"tmanho = %@",tamanho);
+        
+        continua = [stringFinal rangeOfString:@"<tr class"];
+        
+    }
+    continua = [stringFinal rangeOfString:@"<tr class"];
+    
+}
+
 
 -(void)marcarPosicaoNoMapaDiretoSiteCet:(CoordenadaCetSite*)CoordCet{
     
