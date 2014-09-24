@@ -9,12 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface CoodenadaLatitudeLongitude : NSObject {
-    
-}
+@interface CoodenadaLatitudeLongitude : NSObject
 
 @property  float latitude;
 @property float longitude;
-
 
 @end

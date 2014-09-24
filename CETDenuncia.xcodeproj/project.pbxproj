@@ -48,6 +48,7 @@
 		0BB77DBF19CCB4E500343AC1 /* DataBaseCoordenada.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77DBC19CCB4E500343AC1 /* DataBaseCoordenada.m */; };
 		0BB77DC319CCB54C00343AC1 /* MapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77DC219CCB54C00343AC1 /* MapaViewController.m */; };
 		0BB77DC519CCBF9F00343AC1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB77DC419CCBF9F00343AC1 /* CoreLocation.framework */; };
+		A8CB014D19D35B2600222260 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CB014C19D35B2600222260 /* camera.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		0BB77DC119CCB54C00343AC1 /* MapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapaViewController.h; sourceTree = "<group>"; };
 		0BB77DC219CCB54C00343AC1 /* MapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapaViewController.m; sourceTree = "<group>"; };
 		0BB77DC419CCBF9F00343AC1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A8CB014C19D35B2600222260 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +166,7 @@
 			children = (
 				0BB77D7619CCA7A200343AC1 /* Imagens */,
 				0BB77D7919CCA98B00343AC1 /* STTwitters */,
-				0BB77DAC19CCAC9D00343AC1 /* ClassesBasicas */,
+				0BB77DAC19CCAC9D00343AC1 /* Base */,
 				0BB77D4419CCA4DA00343AC1 /* CETDenuncia */,
 				0BB77D6619CCA4DA00343AC1 /* CETDenunciaTests */,
 				0BB77D3D19CCA4DA00343AC1 /* Frameworks */,
@@ -245,6 +247,7 @@
 		0BB77D7619CCA7A200343AC1 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				A8CB014C19D35B2600222260 /* camera.png */,
 				0BB77D7719CCA7A200343AC1 /* imageCET.png */,
 				0BB77DB519CCB4C100343AC1 /* CETIcone.png */,
 			);
@@ -294,7 +297,7 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
-		0BB77DAC19CCAC9D00343AC1 /* ClassesBasicas */ = {
+		0BB77DAC19CCAC9D00343AC1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				0BB77DB719CCB4E500343AC1 /* CoodenadaLatitudeLongitude.h */,
@@ -306,6 +309,7 @@
 				0BB77DAD19CCAC9D00343AC1 /* Usuario.h */,
 				0BB77DAE19CCAC9D00343AC1 /* Usuario.m */,
 			);
+			name = Base;
 			path = ClassesBasicas;
 			sourceTree = "<group>";
 		};
@@ -416,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BB77D5519CCA4DA00343AC1 /* Main_iPad.storyboard in Resources */,
+				A8CB014D19D35B2600222260 /* camera.png in Resources */,
 				0BB77D5A19CCA4DA00343AC1 /* Images.xcassets in Resources */,
 				0BB77D7819CCA7A200343AC1 /* imageCET.png in Resources */,
 				0BB77DB619CCB4C100343AC1 /* CETIcone.png in Resources */,
