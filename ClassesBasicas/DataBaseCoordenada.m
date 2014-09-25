@@ -22,7 +22,9 @@
 -(id)init{
     self = [super init];
     if(self){
-        self.listaCoordenadas= [[NSMutableArray alloc]init];
+        self.listaCoordenadasOcorrencia = [[NSMutableArray alloc]init];
+        self.listaCoordenadasLentidao = [[NSMutableArray alloc] init];
+        
         self.listaCoordenadasLatLong= [[NSMutableArray alloc]init];
     }
     return self;
@@ -34,17 +36,21 @@
 
 
 -(NSArray*)allItems{
-    return [self listaCoordenadas];
+    return [self listaCoordenadasOcorrencia];
 }
 
 
--(void)criaCoordenadaSiteCET:(CoordenadaCetSite *)coord{
-    [[[DataBaseCoordenada sharedManager] listaCoordenadas]addObject:coord];
+-(void)criaCoordenadaSiteCETOcorrencia:(CoordenadaCetSite *)coordenada{
+    [[[DataBaseCoordenada sharedManager] listaCoordenadasOcorrencia] addObject: coordenada];
+}
+
+-(void)criaCoordenadaSiteCETLentidao:(CoordenadaCetSiteLentidao *)coordenada{
+    [[[DataBaseCoordenada sharedManager] listaCoordenadasLentidao] addObject: coordenada];
 }
 
 
 
--(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCet:(CoordenadaCetSite*)CoordCet{
+-(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetOcorrencia:(CoordenadaCetSite*)CoordCet{
     
     MKPointAnnotation *ponto = [[MKPointAnnotation alloc] init];
     CLGeocoder* geocoder = [[CLGeocoder alloc]init];
@@ -57,7 +63,7 @@
             
             
             CLLocationCoordinate2D localizacao;
-            ponto.title = @"Site CET";
+            ponto.title = @"Ocorrência";
             ponto.subtitle = [CoordCet titulo];
             
             //Guarda a latitude e longitude para marcação no mapa
@@ -77,6 +83,40 @@
     
     return ponto;
 
+}
+
+-(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet{
+    
+    MKPointAnnotation *ponto = [[MKPointAnnotation alloc] init];
+    CLGeocoder* geocoder = [[CLGeocoder alloc]init];
+    NSString *local = [NSString stringWithFormat:@"%@%@%@",[CoordCet corredor],@" ",@"São Paulo"];
+    
+    [geocoder geocodeAddressString:local completionHandler:^(NSArray* placemarks, NSError* error){
+        for (CLPlacemark  *aPlacemark in placemarks) {
+            
+            
+            CLLocationCoordinate2D localizacao;
+            ponto.title = @"Lentidão";
+            ponto.subtitle = [NSString stringWithFormat:@"%@ - Sentido: %@ - Tamanho: %@m",[CoordCet corredor],[CoordCet sentido],[CoordCet tamanho]];
+            
+            //Guarda a latitude e longitude para marcação no mapa
+            NSString *latitude = [NSString stringWithFormat:@"%f", aPlacemark.location.coordinate.latitude];
+            NSString *longitude = [NSString stringWithFormat:@"%f", aPlacemark.location.coordinate.longitude];
+            localizacao.latitude = [latitude doubleValue];
+            localizacao.longitude = [longitude doubleValue];
+            
+            CoodenadaLatitudeLongitude *cordll = [[CoodenadaLatitudeLongitude alloc]init];
+            cordll.latitude = [latitude doubleValue];
+            cordll.longitude = [longitude doubleValue];
+            
+            [[[DataBaseCoordenada sharedManager] listaCoordenadasLatLong]addObject: cordll];
+            
+            ponto.coordinate = localizacao;
+        }
+    }];
+    
+    return ponto;
+    
 }
 
 

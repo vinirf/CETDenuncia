@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CoordenadaCetSite.h"
+#import "CoordenadaCetSiteLentidao.h"
 #import "CoodenadaLatitudeLongitude.h"
 #import <MapKit/MapKit.h>
 
@@ -15,7 +16,9 @@
 
 @interface DataBaseCoordenada : NSObject
 
-@property NSMutableArray *listaCoordenadas;
+@property NSMutableArray *listaCoordenadasOcorrencia;
+@property NSMutableArray *listaCoordenadasLentidao;
+
 @property NSMutableArray *listaCoordenadasLatLong;
 
 +(DataBaseCoordenada*)sharedManager;
@@ -23,7 +26,12 @@
 //X,Y,TYPE,SPEED,DirType,Direction
 -(NSMutableArray*)allItems;
 
--(void)criaCoordenadaSiteCET:(CoordenadaCetSite *)coord;
--(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCet:(CoordenadaCetSite*)CoordCet;
+
+//Ocorrencia e Lentidao
+-(void)criaCoordenadaSiteCETOcorrencia:(CoordenadaCetSite *)coord;
+-(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetOcorrencia:(CoordenadaCetSite*)CoordCet;
+
+-(void)criaCoordenadaSiteCETLentidao:(CoordenadaCetSiteLentidao *)coord;
+-(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet;
     
 @end

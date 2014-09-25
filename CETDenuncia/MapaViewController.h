@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoordenadaCetSite.h"
-#import "DataBaseCoordenada.h"
-#import "Usuario.h"
 #import <MapKit/MapKit.h>
+#import "DataBaseCoordenada.h"
+#import "CoordenadaCetSite.h"
+#import "CoordenadaCetSiteLentidao.h"
+#import "Usuario.h"
 
 @interface MapaViewController : UIViewController <MKMapViewDelegate>
 
