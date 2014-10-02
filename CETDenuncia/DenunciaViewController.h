@@ -14,7 +14,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Usuario.h"
 
-@interface DenunciaViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate>
+@interface DenunciaViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,MKMapViewDelegate>
 
 
 @property NSString *nomeTwitter;

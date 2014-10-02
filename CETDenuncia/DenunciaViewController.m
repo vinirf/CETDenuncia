@@ -30,7 +30,7 @@
     [[self.outBtoDenunciar layer] setCornerRadius: 5];
     [[self.outBtoImagem layer] setCornerRadius: 5];
 
-    //[Usuario sharedManager].locUsuario = self.locationManager.location.coordinate;
+    [[Usuario sharedManager]setaPosicaoUsuario:self.locationManager.location.coordinate];
     
 }
 
@@ -43,7 +43,8 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [self pegarLocalizacaoDoUsuario];
+    
+    
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -53,7 +54,7 @@
 ///////////////////////////////////////////////////////////////////////////
 
 
-- (void)pegarLocalizacaoDoUsuario{
+- (void)locatilizaUsuario{
     
     CLGeocoder *ceo = [[CLGeocoder alloc]init];
     CLLocationCoordinate2D coord = [[Usuario sharedManager]locUsuario];
@@ -62,8 +63,18 @@
     [ceo reverseGeocodeLocation: loc completionHandler:
      ^(NSArray *placemarks, NSError *error) {
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
+         //NSLog(@"placemark %@",placemark);
+         //String to hold address
+         //NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+         //NSLog(@"addressDictionary %@", placemark.addressDictionary);
+         //         NSLog(@"Cidade %@",placemark.locality); // Extract the city name
+         //         NSLog(@"Rua %@",placemark.name);
+         //         NSLog(@"Bairro %@",placemark.subLocality);
+         //NSLog(@"location %@",placemark.location);
          
          self.localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
+         
+         NSLog(@"f88orm = %@",self.localizacao);
      }];
     
 }
@@ -72,16 +83,20 @@
 - (IBAction)buttonTwetar:(id)sender {
     
     
+    NSLog(@"form = %@",self.localizacao);
+    
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
         
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
         [tweetSheet addImage:self.imageView.image];
         
+       
         NSString *endereco = [NSString stringWithFormat:@"%@%@%@%@",self.nomeTwitter,@" ",self.localizacao,@", "];
         [tweetSheet setInitialText:endereco];
-
+        
         [self presentViewController: tweetSheet animated:YES completion:nil];
+        
     }
     else{
         UIAlertView *alertView = [[UIAlertView alloc]
@@ -97,7 +112,7 @@
 
 
 - (IBAction)takePhoto:(UIButton *)sender {
-    
+
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){

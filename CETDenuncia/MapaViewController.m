@@ -27,13 +27,9 @@
     //Configura a localização atual como a localização do usuário
     self.mapa.showsUserLocation = YES;
     [self.mapa setDelegate: self];
-    
-    //Adiciona como view filho
-    [self.view addSubview: self.mapa];
-    
-    
+
     [self serializaDadosSiteCET];
-    [self serializaDadosSiteCETLentidao];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -54,7 +50,7 @@
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     
     [[self mapa] setCenterCoordinate: userLocation.location.coordinate];
-    [[Usuario sharedManager]setaPosicaoUsuario:userLocation.location.coordinate];
+   // [[Usuario sharedManager]setaPosicaoUsuario:userLocation.location.coordinate];
     
 }
 

@@ -393,7 +393,7 @@
 				ORGANIZATIONNAME = "Vinicius Resende | Emerson Barros";
 				TargetAttributes = {
 					0BB77D3A19CCA4DA00343AC1 = {
-						DevelopmentTeam = SEUF597V3Z;
+						DevelopmentTeam = U6NZ972TGR;
 					};
 					0BB77D5E19CCA4DA00343AC1 = {
 						TestTargetID = 0BB77D3A19CCA4DA00343AC1;

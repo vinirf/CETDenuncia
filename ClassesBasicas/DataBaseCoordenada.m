@@ -24,7 +24,6 @@
     if(self){
         self.listaCoordenadasOcorrencia = [[NSMutableArray alloc]init];
         self.listaCoordenadasLentidao = [[NSMutableArray alloc] init];
-        
         self.listaCoordenadasLatLong= [[NSMutableArray alloc]init];
     }
     return self;
