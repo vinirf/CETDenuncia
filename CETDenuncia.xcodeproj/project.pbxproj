@@ -48,6 +48,8 @@
 		0BB77DBF19CCB4E500343AC1 /* DataBaseCoordenada.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77DBC19CCB4E500343AC1 /* DataBaseCoordenada.m */; };
 		0BB77DC319CCB54C00343AC1 /* MapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77DC219CCB54C00343AC1 /* MapaViewController.m */; };
 		0BB77DC519CCBF9F00343AC1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB77DC419CCBF9F00343AC1 /* CoreLocation.framework */; };
+		0BE5BEE519DF19CE005CF557 /* ViewInicialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5BEE419DF19CE005CF557 /* ViewInicialViewController.m */; };
+		0BE5BEE819DF1D37005CF557 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5BEE719DF1D37005CF557 /* Reachability.m */; };
 		A8CB014D19D35B2600222260 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CB014C19D35B2600222260 /* camera.png */; };
 		A8F58D8719D48D30008B8E06 /* CoordenadaCetSiteLentidao.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F58D8619D48D30008B8E06 /* CoordenadaCetSiteLentidao.m */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,10 @@
 		0BB77DC119CCB54C00343AC1 /* MapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapaViewController.h; sourceTree = "<group>"; };
 		0BB77DC219CCB54C00343AC1 /* MapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapaViewController.m; sourceTree = "<group>"; };
 		0BB77DC419CCBF9F00343AC1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0BE5BEE319DF19CE005CF557 /* ViewInicialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewInicialViewController.h; sourceTree = "<group>"; };
+		0BE5BEE419DF19CE005CF557 /* ViewInicialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewInicialViewController.m; sourceTree = "<group>"; };
+		0BE5BEE619DF1D37005CF557 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = CETDenuncia/Reachability.h; sourceTree = "<group>"; };
+		0BE5BEE719DF1D37005CF557 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = CETDenuncia/Reachability.m; sourceTree = "<group>"; };
 		A8CB014C19D35B2600222260 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		A8F58D8519D48D30008B8E06 /* CoordenadaCetSiteLentidao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordenadaCetSiteLentidao.h; sourceTree = "<group>"; };
 		A8F58D8619D48D30008B8E06 /* CoordenadaCetSiteLentidao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordenadaCetSiteLentidao.m; sourceTree = "<group>"; };
@@ -167,6 +173,8 @@
 		0BB77D3219CCA4DA00343AC1 = {
 			isa = PBXGroup;
 			children = (
+				0BE5BEE619DF1D37005CF557 /* Reachability.h */,
+				0BE5BEE719DF1D37005CF557 /* Reachability.m */,
 				0BB77D7619CCA7A200343AC1 /* Imagens */,
 				0BB77D7919CCA98B00343AC1 /* STTwitters */,
 				0BB77DAC19CCAC9D00343AC1 /* Base */,
@@ -205,6 +213,7 @@
 		0BB77D4419CCA4DA00343AC1 /* CETDenuncia */ = {
 			isa = PBXGroup;
 			children = (
+				0BE5BEE219DF199C005CF557 /* ViewInicial */,
 				0BB77DC019CCB51500343AC1 /* MapView */,
 				0BB77DB419CCB0BE00343AC1 /* TimeLineView */,
 				0BB77DB319CCB0B500343AC1 /* DenunciaView */,
@@ -345,6 +354,15 @@
 			name = MapView;
 			sourceTree = "<group>";
 		};
+		0BE5BEE219DF199C005CF557 /* ViewInicial */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5BEE319DF19CE005CF557 /* ViewInicialViewController.h */,
+				0BE5BEE419DF19CE005CF557 /* ViewInicialViewController.m */,
+			);
+			name = ViewInicial;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -453,11 +471,13 @@
 				0BB77D9919CCA98B00343AC1 /* NSString+STTwitter.m in Sources */,
 				0BB77DBF19CCB4E500343AC1 /* DataBaseCoordenada.m in Sources */,
 				A8F58D8719D48D30008B8E06 /* CoordenadaCetSiteLentidao.m in Sources */,
+				0BE5BEE819DF1D37005CF557 /* Reachability.m in Sources */,
 				0BB77D9819CCA98B00343AC1 /* NSError+STTwitter.m in Sources */,
 				0BB77D5819CCA4DA00343AC1 /* DenunciaViewController.m in Sources */,
 				0BB77DA119CCA98B00343AC1 /* BAVPlistNode.m in Sources */,
 				0BB77D4F19CCA4DA00343AC1 /* AppDelegate.m in Sources */,
 				0BB77DBD19CCB4E500343AC1 /* CoodenadaLatitudeLongitude.m in Sources */,
+				0BE5BEE519DF19CE005CF557 /* ViewInicialViewController.m in Sources */,
 				0BB77D9719CCA98B00343AC1 /* NSDateFormatter+STTwitter.m in Sources */,
 				0BB77D9B19CCA98B00343AC1 /* STTwitterAPI.m in Sources */,
 				0BB77D9A19CCA98B00343AC1 /* STHTTPRequest+STTwitter.m in Sources */,

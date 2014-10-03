@@ -13,6 +13,7 @@
 
 @property CLLocationCoordinate2D locUsuario;
 @property NSString *nome;
+@property NSString *localizacao;
 
 +(Usuario*)sharedManager;
 -(void)setaPosicaoUsuario:(CLLocationCoordinate2D)posUsuario;

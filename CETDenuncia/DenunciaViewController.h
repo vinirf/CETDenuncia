@@ -19,7 +19,6 @@
 
 @property NSString *nomeTwitter;
 @property  NSString *imageString;
-@property  NSString *localizacao;
 @property MKMapView *mapa;
 @property CLLocationManager *locationManager;
 
