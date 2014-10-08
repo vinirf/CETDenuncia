@@ -25,7 +25,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *outBtoDenunciar;
-@property (weak, nonatomic) IBOutlet UIButton *outBtoImagem;
+
 
 
 @end

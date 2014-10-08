@@ -16,12 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7r-DF-BRB">
-                                <rect key="frame" x="20" y="181" width="280" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-dregrade.png" translatesAutoresizingMaskIntoConstraints="NO" id="ER0-Rn-tbc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.19377772870421675" green="0.35747339598528849" blue="0.56353635204081631" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Denunciar">
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.84313725490000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7r-DF-BRB">
+                                <rect key="frame" x="36" y="352" width="249" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btoDenunciar.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -29,36 +33,18 @@
                                     <action selector="buttonTwetar:" destination="PbV-cA-LCZ" eventType="touchUpInside" id="2MQ-mG-d69"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaL-b6-uTJ">
-                                <rect key="frame" x="20" y="239" width="280" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.19377772870000001" green="0.357473396" blue="0.56353635199999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="camera.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePhoto:" destination="PbV-cA-LCZ" eventType="touchUpInside" id="ySu-Du-RPF"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVL-QL-FL4">
-                                <rect key="frame" x="20" y="309" width="280" height="174"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btoFoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZVL-QL-FL4">
+                                <rect key="frame" x="35" y="105" width="250" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ER0-Rn-tbc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.097559750896226177" green="0.18369649560697415" blue="0.31566884566326525" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="camera.png" id="42X-iU-hDf"/>
+                    <tabBarItem key="tabBarItem" title="" image="btoDenuncia.png" id="42X-iU-hDf"/>
                     <connections>
                         <outlet property="imageView" destination="ZVL-QL-FL4" id="Ekj-To-wjf"/>
                         <outlet property="outBtoDenunciar" destination="Q7r-DF-BRB" id="WM3-qJ-sOj"/>
-                        <outlet property="outBtoImagem" destination="kaL-b6-uTJ" id="aAv-aL-Cok"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFk-0B-4VD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,13 +62,7 @@
                     <view key="view" contentMode="scaleToFill" id="4nv-vJ-7dx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CETIcone.png" translatesAutoresizingMaskIntoConstraints="NO" id="36f-OV-SHr">
-                                <rect key="frame" x="42" y="158" width="236" height="252"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <segue destination="gwg-W9-RnK" kind="modal" identifier="chamaApp" modalTransitionStyle="crossDissolve" id="dA2-9Z-UiS"/>
@@ -97,10 +77,12 @@
             <objects>
                 <tabBarController storyboardIdentifier="embedInicial" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gwg-W9-RnK" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Cza-ro-nfQ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="Cza-ro-nfQ">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.96862745100000003" green="0.84313725490000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="PbV-cA-LCZ" kind="relationship" relationship="viewControllers" id="qCE-eN-4ZY"/>
@@ -112,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="256" y="81"/>
         </scene>
-        <!--Mapa View Controller - Mapa-->
+        <!--Mapa View Controller-->
         <scene sceneID="qhB-W8-RdY">
             <objects>
                 <viewController id="Cff-vX-bHn" customClass="MapaViewController" sceneMemberID="viewController">
@@ -131,15 +113,10 @@
                                     <outlet property="delegate" destination="Cff-vX-bHn" id="ZGf-v3-hjJ"/>
                                 </connections>
                             </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJz-oE-zaj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.097559750900000006" green="0.18369649560000001" blue="0.31566884569999998" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" id="OMJ-ov-Uyk"/>
+                    <tabBarItem key="tabBarItem" title="" image="btoMapa.png" id="OMJ-ov-Uyk"/>
                     <navigationItem key="navigationItem" id="gL6-zE-yjn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -150,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="898" y="814"/>
         </scene>
-        <!--Time LineCET View Controller - Olho Vivo-->
+        <!--Time LineCET View Controller-->
         <scene sceneID="0To-64-HjF">
             <objects>
                 <viewController id="Mgi-a6-HDq" customClass="TimeLineCETViewController" sceneMemberID="viewController">
@@ -167,15 +144,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQa-XY-hIK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szj-sw-NtD">
+                                <rect key="frame" x="0.0" y="18" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.097559750900000006" green="0.18369649560000001" blue="0.31566884569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.84313725490000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm2-6h-xtu">
-                                <rect key="frame" x="9" y="5" width="46" height="45"/>
+                                <rect key="frame" x="16" y="25" width="24" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="imageCET.png">
+                                <state key="normal" backgroundImage="botao-voltar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -185,20 +162,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Olho Vivo" id="Xt9-W3-uzI"/>
+                    <tabBarItem key="tabBarItem" title="" image="btoOlhoVivo.png" id="Xt9-W3-uzI"/>
                     <connections>
                         <outlet property="TimeLineCETWebView" destination="g1k-MH-pG5" id="FDK-kc-h2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhe-Ns-LIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="86"/>
+            <point key="canvasLocation" x="898" y="81"/>
         </scene>
     </scenes>
     <resources>
-        <image name="CETIcone.png" width="38" height="49"/>
-        <image name="camera.png" width="30" height="24"/>
-        <image name="imageCET.png" width="180" height="183"/>
+        <image name="background-dregrade.png" width="320" height="568"/>
+        <image name="botao-voltar.png" width="24" height="40"/>
+        <image name="btoDenuncia.png" width="35" height="32"/>
+        <image name="btoDenunciar.png" width="249" height="63"/>
+        <image name="btoFoto.png" width="250" height="215"/>
+        <image name="btoMapa.png" width="32" height="34"/>
+        <image name="btoOlhoVivo.png" width="34" height="34"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

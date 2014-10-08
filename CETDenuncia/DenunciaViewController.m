@@ -19,8 +19,12 @@
     //Conta CET
     self.nomeTwitter = @"@CETSP_";
     
-    //Localização
-   
+    //Gesture para adicionar foto
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tirarFoto)];
+    singleTap.numberOfTouchesRequired = 1;
+    singleTap.enabled = YES;
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer: singleTap];
     
 }
 
@@ -77,10 +81,6 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
     
-    //Arredonda botões
-    [[self.outBtoDenunciar layer] setCornerRadius: 5];
-    [[self.outBtoImagem layer] setCornerRadius: 5];
-    
     [[Usuario sharedManager]setaPosicaoUsuario:self.locationManager.location.coordinate];
     
     CLGeocoder *ceo = [[CLGeocoder alloc]init];
@@ -131,8 +131,10 @@
 
 
 
-- (IBAction)takePhoto:(UIButton *)sender {
 
+-(void)tirarFoto{
+    NSLog(@"Entrou pra tirar foto!");
+    
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
