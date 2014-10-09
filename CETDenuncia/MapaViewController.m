@@ -263,7 +263,8 @@
     pinView.canShowCallout = YES;
     pinView.animatesDrop = YES;
     pinView.selected = YES;
-    
+//    pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+
     return pinView;
 }
 

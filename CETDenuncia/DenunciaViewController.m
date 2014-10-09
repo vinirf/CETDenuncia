@@ -20,11 +20,18 @@
     self.nomeTwitter = @"@CETSP_";
     
     //Gesture para adicionar foto
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tirarFoto)];
-    singleTap.numberOfTouchesRequired = 1;
-    singleTap.enabled = YES;
+    self.tapAddFoto = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tirarFoto)];
+    
+    self.tapAddFoto .numberOfTouchesRequired = 1;
+    self.tapAddFoto .enabled = YES;
     self.imageView.userInteractionEnabled = YES;
-    [self.imageView addGestureRecognizer: singleTap];
+    [self.imageView addGestureRecognizer: self.tapAddFoto];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {
+        [self.imgBackground setImage: [UIImage imageNamed:@"tutorial.png"]];
+        [self tutorialVisualizado];
+    }
+
     
 }
 
@@ -36,13 +43,17 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    
-    
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+}
+
+-(void)tutorialVisualizado{
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"tutorialVisto"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
 }
 
 ///////////////////////////////////////////////////////////////////////////

@@ -19,10 +19,14 @@
 
 @property NSString *nomeTwitter;
 @property  NSString *imageString;
+
 @property MKMapView *mapa;
 @property CLLocationManager *locationManager;
 
+@property UITapGestureRecognizer *tapAddFoto;
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *outBtoDenunciar;
 
