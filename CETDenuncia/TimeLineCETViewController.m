@@ -9,6 +9,7 @@
 #import "TimeLineCETViewController.h"
 
 @interface TimeLineCETViewController()
+
 @end
 
 @implementation TimeLineCETViewController
@@ -34,21 +35,25 @@
     [self.TimeLineCETWebView loadHTMLString:embedHTML baseURL:nil];
     [self.TimeLineCETWebView setDataDetectorTypes:UIDataDetectorTypeNone];
     
+    
 }
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
 
+
 /* Metodo do delegate UIWebView
    Bloqueia o acesso para links externos*/
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    NSLog(@"Entrou");
     return !(navigationType == UIWebViewNavigationTypeLinkClicked);
 }
 
-
+//Finaliza
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-   
+    NSLog(@"Finalizou");
+
 }
 
 
@@ -57,7 +62,6 @@
     
     [self.TimeLineCETWebView loadHTMLString:embedHTML baseURL:nil];
     [self.TimeLineCETWebView setDataDetectorTypes:UIDataDetectorTypeNone];
-
 }
 
 @end
