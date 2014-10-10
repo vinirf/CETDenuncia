@@ -253,17 +253,13 @@
     
     
     if([pinView.annotation.title isEqualToString:@"Ocorrência"]){
-        [pinView setImage:[UIImage imageNamed:@"CETIcone.png"]];
+        [pinView setImage:[UIImage imageNamed:@"pino-cornetasp.png"]];
     }
     
-    if([pinView.annotation.title isEqualToString:@"Lentidão"]){
-        [pinView setImage:[UIImage imageNamed:@"camera.png"]];
-    }
     
     pinView.canShowCallout = YES;
     pinView.animatesDrop = YES;
     pinView.selected = YES;
-//    pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 
     return pinView;
 }
