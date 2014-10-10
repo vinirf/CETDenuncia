@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0BB77D3A19CCA4DA00343AC1"
                BuildableName = "CETDenuncia.app"
-               BlueprintName = "CETDenuncia"
-               ReferencedContainer = "container:CETDenuncia.xcodeproj">
+               BlueprintName = "Corneta SP"
+               ReferencedContainer = "container:Corneta SP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "0BB77D5E19CCA4DA00343AC1"
                BuildableName = "CETDenunciaTests.xctest"
                BlueprintName = "CETDenunciaTests"
-               ReferencedContainer = "container:CETDenuncia.xcodeproj">
+               ReferencedContainer = "container:Corneta SP.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0BB77D3A19CCA4DA00343AC1"
             BuildableName = "CETDenuncia.app"
-            BlueprintName = "CETDenuncia"
-            ReferencedContainer = "container:CETDenuncia.xcodeproj">
+            BlueprintName = "Corneta SP"
+            ReferencedContainer = "container:Corneta SP.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0BB77D3A19CCA4DA00343AC1"
             BuildableName = "CETDenuncia.app"
-            BlueprintName = "CETDenuncia"
-            ReferencedContainer = "container:CETDenuncia.xcodeproj">
+            BlueprintName = "Corneta SP"
+            ReferencedContainer = "container:Corneta SP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0BB77D3A19CCA4DA00343AC1"
             BuildableName = "CETDenuncia.app"
-            BlueprintName = "CETDenuncia"
-            ReferencedContainer = "container:CETDenuncia.xcodeproj">
+            BlueprintName = "Corneta SP"
+            ReferencedContainer = "container:Corneta SP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

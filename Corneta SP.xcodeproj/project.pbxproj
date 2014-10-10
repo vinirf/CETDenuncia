@@ -74,7 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BB77D3B19CCA4DA00343AC1 /* CETDenuncia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CETDenuncia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BB77D3B19CCA4DA00343AC1 /* Corneta SP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Corneta SP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB77D3E19CCA4DA00343AC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0BB77D4019CCA4DA00343AC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0BB77D4219CCA4DA00343AC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -206,7 +206,7 @@
 		0BB77D3C19CCA4DA00343AC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BB77D3B19CCA4DA00343AC1 /* CETDenuncia.app */,
+				0BB77D3B19CCA4DA00343AC1 /* Corneta SP.app */,
 				0BB77D5F19CCA4DA00343AC1 /* CETDenunciaTests.xctest */,
 			);
 			name = Products;
@@ -393,9 +393,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0BB77D3A19CCA4DA00343AC1 /* CETDenuncia */ = {
+		0BB77D3A19CCA4DA00343AC1 /* Corneta SP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BB77D7019CCA4DA00343AC1 /* Build configuration list for PBXNativeTarget "CETDenuncia" */;
+			buildConfigurationList = 0BB77D7019CCA4DA00343AC1 /* Build configuration list for PBXNativeTarget "Corneta SP" */;
 			buildPhases = (
 				0BB77D3719CCA4DA00343AC1 /* Sources */,
 				0BB77D3819CCA4DA00343AC1 /* Frameworks */,
@@ -405,9 +405,9 @@
 			);
 			dependencies = (
 			);
-			name = CETDenuncia;
+			name = "Corneta SP";
 			productName = CETDenuncia;
-			productReference = 0BB77D3B19CCA4DA00343AC1 /* CETDenuncia.app */;
+			productReference = 0BB77D3B19CCA4DA00343AC1 /* Corneta SP.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0BB77D5E19CCA4DA00343AC1 /* CETDenunciaTests */ = {
@@ -445,7 +445,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0BB77D3619CCA4DA00343AC1 /* Build configuration list for PBXProject "CETDenuncia" */;
+			buildConfigurationList = 0BB77D3619CCA4DA00343AC1 /* Build configuration list for PBXProject "Corneta SP" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -458,7 +458,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0BB77D3A19CCA4DA00343AC1 /* CETDenuncia */,
+				0BB77D3A19CCA4DA00343AC1 /* Corneta SP */,
 				0BB77D5E19CCA4DA00343AC1 /* CETDenunciaTests */,
 			);
 		};
@@ -544,7 +544,7 @@
 /* Begin PBXTargetDependency section */
 		0BB77D6519CCA4DA00343AC1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0BB77D3A19CCA4DA00343AC1 /* CETDenuncia */;
+			target = 0BB77D3A19CCA4DA00343AC1 /* Corneta SP */;
 			targetProxy = 0BB77D6419CCA4DA00343AC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -668,7 +668,7 @@
 				GCC_PREFIX_HEADER = "CETDenuncia/CETDenuncia-Prefix.pch";
 				INFOPLIST_FILE = "CETDenuncia/CETDenuncia-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Corneta SP";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -685,7 +685,7 @@
 				GCC_PREFIX_HEADER = "CETDenuncia/CETDenuncia-Prefix.pch";
 				INFOPLIST_FILE = "CETDenuncia/CETDenuncia-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Corneta SP";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -734,7 +734,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0BB77D3619CCA4DA00343AC1 /* Build configuration list for PBXProject "CETDenuncia" */ = {
+		0BB77D3619CCA4DA00343AC1 /* Build configuration list for PBXProject "Corneta SP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0BB77D6E19CCA4DA00343AC1 /* Debug */,
@@ -743,7 +743,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0BB77D7019CCA4DA00343AC1 /* Build configuration list for PBXNativeTarget "CETDenuncia" */ = {
+		0BB77D7019CCA4DA00343AC1 /* Build configuration list for PBXNativeTarget "Corneta SP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0BB77D7119CCA4DA00343AC1 /* Debug */,
