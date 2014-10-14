@@ -24,59 +24,59 @@
     [super viewDidLoad];
     
     //Títulos e imagens
-    self.pageTitles = @[@"Denuncie algo errado", @"Fique atento às notícias", @"Encontre ocorrências próximas"];
-    self.pageImages = @[@"tutorial.png", @"imageCET.png", @"tutorial.png"];
+    self.pageTitles = @[@"Fotografe e denuncie uma irregularidade diretamente para a CET no Twitter.", @"Acompanhe em tempo real o Twitter da CET.", @"Com esse mapa, fique ligado nas ocorrências próximas à você."];
+    self.pageImages = @[@"Tela-Denuncia.png", @"Tela-OlhoVivo.png", @"Tela-Localizaçao.png"];
     
     //Cria o ViewController associado ao story board
-    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"PageViewController"];
-    self.pageViewController.dataSource = self;
+    self.tutorialViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"PageViewController"];
+    self.tutorialViewController.dataSource = self;
     
     PageContentViewController *startingViewController = [self viewControllerAtIndex: 0];
     NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction: UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.tutorialViewController setViewControllers:viewControllers direction: UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    //Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+    //Diminui o tamanho do Tutorial viewcontroller
+    self.tutorialViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
     
-    [self addChildViewController:_pageViewController];
-    [self.view addSubview:_pageViewController.view];
-    [self.pageViewController didMoveToParentViewController:self];
+    [self addChildViewController: self.tutorialViewController];
+    [self.view addSubview: self.tutorialViewController.view];
+    [self.tutorialViewController didMoveToParentViewController:self];
 }
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-//- (IBAction)startWalkthrough:(id)sender {
-//    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-//    NSArray *viewControllers = @[startingViewController];
-//    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
-//}
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index{
     if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
         return nil;
     }
-    
+
     // Create a new view controller and pass suitable data.
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    
     pageContentViewController.imageFile = self.pageImages[index];
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
     
+    if ([_tutorialViewController.viewControllers.lastObject isEqual: pageContentViewController]) {
+        self.botaoComecar.hidden = NO;
+    }else{
+        self.botaoComecar.hidden = YES;
+    }
+    
+    
+    
+    
+    
     return pageContentViewController;
 }
+
+
+
+
+
 
 #pragma mark - Page View Controller Data Source
 
@@ -88,7 +88,7 @@
     }
     
     index--;
-    return [self viewControllerAtIndex:index];
+    return [self viewControllerAtIndex: index];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
@@ -102,10 +102,11 @@
     if (index == [self.pageTitles count]) {
         return nil;
     }
-    return [self viewControllerAtIndex:index];
+    return [self viewControllerAtIndex: index];
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController{
+    
     return [self.pageTitles count];
 }
 

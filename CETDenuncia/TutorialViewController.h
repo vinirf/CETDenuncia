@@ -11,8 +11,10 @@
 
 @interface TutorialViewController : UIViewController <UIPageViewControllerDataSource>
 
-@property UIPageViewController *pageViewController;
+@property UIPageViewController *tutorialViewController;
 @property NSArray *pageTitles;
 @property NSArray *pageImages;
+
+@property (weak, nonatomic) IBOutlet UIButton *botaoComecar;
 
 @end

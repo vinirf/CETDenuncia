@@ -57,6 +57,9 @@
 		A8350DB619E70CC1006689C2 /* logo-superior.png in Resources */ = {isa = PBXBuildFile; fileRef = A8350DB519E70CC1006689C2 /* logo-superior.png */; };
 		A860438F19EDABE60093D155 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A860438E19EDABE60093D155 /* PageContentViewController.m */; };
 		A860439119EDB5830093D155 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A860439019EDB5830093D155 /* TutorialViewController.m */; };
+		A860439D19EDBF780093D155 /* Tela-Denuncia.png in Resources */ = {isa = PBXBuildFile; fileRef = A860439A19EDBF780093D155 /* Tela-Denuncia.png */; };
+		A860439E19EDBF780093D155 /* Tela-Localizaçao.png in Resources */ = {isa = PBXBuildFile; fileRef = A860439B19EDBF780093D155 /* Tela-Localizaçao.png */; };
+		A860439F19EDBF780093D155 /* Tela-OlhoVivo.png in Resources */ = {isa = PBXBuildFile; fileRef = A860439C19EDBF780093D155 /* Tela-OlhoVivo.png */; };
 		A8B2D0BB19E5CC4500294D5D /* btoDenuncia.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B2D0B819E5CC4500294D5D /* btoDenuncia.png */; };
 		A8B2D0BC19E5CC4500294D5D /* btoMapa.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B2D0B919E5CC4500294D5D /* btoMapa.png */; };
 		A8B2D0BD19E5CC4500294D5D /* btoOlhoVivo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B2D0BA19E5CC4500294D5D /* btoOlhoVivo.png */; };
@@ -158,6 +161,9 @@
 		A860438D19EDABE60093D155 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		A860438E19EDABE60093D155 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		A860439019EDB5830093D155 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		A860439A19EDBF780093D155 /* Tela-Denuncia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-Denuncia.png"; sourceTree = "<group>"; };
+		A860439B19EDBF780093D155 /* Tela-Localizaçao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-Localizaçao.png"; sourceTree = "<group>"; };
+		A860439C19EDBF780093D155 /* Tela-OlhoVivo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-OlhoVivo.png"; sourceTree = "<group>"; };
 		A8B2D0B819E5CC4500294D5D /* btoDenuncia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btoDenuncia.png; sourceTree = "<group>"; };
 		A8B2D0B919E5CC4500294D5D /* btoMapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btoMapa.png; sourceTree = "<group>"; };
 		A8B2D0BA19E5CC4500294D5D /* btoOlhoVivo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btoOlhoVivo.png; sourceTree = "<group>"; };
@@ -241,8 +247,8 @@
 		0BB77D4419CCA4DA00343AC1 /* CETDenuncia */ = {
 			isa = PBXGroup;
 			children = (
-				A860438C19ED9C200093D155 /* Tutorial */,
 				0BE5BEE219DF199C005CF557 /* ViewInicial */,
+				A860438C19ED9C200093D155 /* Tutorial */,
 				0BB77DC019CCB51500343AC1 /* MapView */,
 				0BB77DB419CCB0BE00343AC1 /* TimeLineView */,
 				0BB77DB319CCB0B500343AC1 /* DenunciaView */,
@@ -288,6 +294,9 @@
 		0BB77D7619CCA7A200343AC1 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				A860439A19EDBF780093D155 /* Tela-Denuncia.png */,
+				A860439B19EDBF780093D155 /* Tela-Localizaçao.png */,
+				A860439C19EDBF780093D155 /* Tela-OlhoVivo.png */,
 				A8350DB119E70C1B006689C2 /* logo-telainicial.png */,
 				A8350DB519E70CC1006689C2 /* logo-superior.png */,
 				A8B2D0BE19E5CD7C00294D5D /* background-dregrade.png */,
@@ -497,6 +506,7 @@
 				A813DC3719E883E000DBCDD4 /* pino-cornetasp.png in Resources */,
 				0BB77D5A19CCA4DA00343AC1 /* Images.xcassets in Resources */,
 				A813DC3519E8821B00DBCDD4 /* pino.png in Resources */,
+				A860439E19EDBF780093D155 /* Tela-Localizaçao.png in Resources */,
 				A8B2D0BC19E5CC4500294D5D /* btoMapa.png in Resources */,
 				0BB77D7819CCA7A200343AC1 /* imageCET.png in Resources */,
 				0BB77DB619CCB4C100343AC1 /* CETIcone.png in Resources */,
@@ -504,6 +514,8 @@
 				A8350DB219E70C1B006689C2 /* logo-telainicial.png in Resources */,
 				A8B2D0C319E5CDF200294D5D /* btoFoto.png in Resources */,
 				A8B2D0BD19E5CC4500294D5D /* btoOlhoVivo.png in Resources */,
+				A860439D19EDBF780093D155 /* Tela-Denuncia.png in Resources */,
+				A860439F19EDBF780093D155 /* Tela-OlhoVivo.png in Resources */,
 				A8350DB419E70CAB006689C2 /* tutorial.png in Resources */,
 				0BB77D5219CCA4DA00343AC1 /* Main_iPhone.storyboard in Resources */,
 				A8350DB619E70CC1006689C2 /* logo-superior.png in Resources */,

@@ -27,12 +27,6 @@
     self.imageView.userInteractionEnabled = YES;
     [self.imageView addGestureRecognizer: self.tapAddFoto];
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {
-        [self.imgBackground setImage: [UIImage imageNamed:@"tutorial.png"]];
-        [self tutorialVisualizado];
-    }
-
-    
 }
 
 
@@ -49,10 +43,6 @@
     [super viewDidDisappear:animated];
 }
 
--(void)tutorialVisualizado{
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"tutorialVisto"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
 
 ///////////////////////////////////////////////////////////////////////////
 

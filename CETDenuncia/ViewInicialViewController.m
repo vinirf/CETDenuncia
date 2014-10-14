@@ -84,13 +84,13 @@
                      
             NSLog(@"f88orm = %@",[Usuario sharedManager].localizacao);
                 
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {
-                [self tutorialVisualizado];
+//            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {
+//                [self tutorialVisualizado];
                 [self performSegueWithIdentifier:@"entraNoTutorial" sender: self];
 
-            }else{
-                [self performSegueWithIdentifier:@"entraNoApp" sender: self];
-            }
+//            }else{
+//                [self performSegueWithIdentifier:@"entraNoApp" sender: self];
+//            }
 
         }];
         
