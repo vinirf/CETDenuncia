@@ -50,10 +50,8 @@
 }
 
 -(void)tutorialVisualizado{
-    
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"tutorialVisto"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-
 }
 
 ///////////////////////////////////////////////////////////////////////////

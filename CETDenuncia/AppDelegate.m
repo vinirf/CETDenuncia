@@ -12,9 +12,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
     [[UITabBar appearance] setTintColor:[UIColor blackColor]];
+        
+    [UIPageControl appearance].pageIndicatorTintColor = [UIColor lightGrayColor];
+    [UIPageControl appearance].currentPageIndicatorTintColor = [UIColor blackColor];
+    [UIPageControl appearance].backgroundColor = [UIColor whiteColor];
 
     return YES;
 }

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0BB77D3A19CCA4DA00343AC1"
-               BuildableName = "CETDenuncia.app"
+               BuildableName = "Corneta SP.app"
                BlueprintName = "Corneta SP"
                ReferencedContainer = "container:Corneta SP.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0BB77D3A19CCA4DA00343AC1"
-            BuildableName = "CETDenuncia.app"
+            BuildableName = "Corneta SP.app"
             BlueprintName = "Corneta SP"
             ReferencedContainer = "container:Corneta SP.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0BB77D3A19CCA4DA00343AC1"
-            BuildableName = "CETDenuncia.app"
+            BuildableName = "Corneta SP.app"
             BlueprintName = "Corneta SP"
             ReferencedContainer = "container:Corneta SP.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0BB77D3A19CCA4DA00343AC1"
-            BuildableName = "CETDenuncia.app"
+            BuildableName = "Corneta SP.app"
             BlueprintName = "Corneta SP"
             ReferencedContainer = "container:Corneta SP.xcodeproj">
          </BuildableReference>
