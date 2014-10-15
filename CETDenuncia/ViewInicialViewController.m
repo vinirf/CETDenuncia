@@ -40,6 +40,7 @@
     
 }
 
+//Mostra view com icones de sem conexão
 -(void)semConexaoComInternet{
     self.iconeSemConexao.hidden = NO;
     self.labelSemConexao.hidden = NO;

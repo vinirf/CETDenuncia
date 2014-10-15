@@ -10,6 +10,8 @@
 
 @interface TimeLineCETViewController()
 
+@property int auxiliarEntrouNoRequest;
+
 @end
 
 @implementation TimeLineCETViewController
@@ -36,9 +38,12 @@
     NSString *embedHTML = @"<html><head></head><body><a class=\"twitter-timeline\" href=\"https://twitter.com/CETSP_\" data-widget-id=\"519942987082502144\">Tweets de @CETSP_</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script></body></html>";
     
     [self.TimeLineCETWebView loadHTMLString:embedHTML baseURL:nil];
-    [self.TimeLineCETWebView setDataDetectorTypes:UIDataDetectorTypeNone];
+    [self.TimeLineCETWebView setDataDetectorTypes: UIDataDetectorTypeNone];
     
-    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    self.auxiliarEntrouNoRequest = 1;
 }
 
 - (void)didReceiveMemoryWarning{
@@ -46,19 +51,22 @@
 }
 
 
+
 /* Metodo do delegate UIWebView
    Bloqueia o acesso para links externos*/
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSLog(@"Entrou");
+    
+    NSLog(@"URL: %@", request.URL);
+    NSString *myString = [request.URL absoluteString];
+    
+    if ([myString  rangeOfString: @"https://twitter.com/intent"].location !=  NSNotFound) {
+        self.outBtoVoltar.hidden = NO;
+    }else{
+        self.outBtoVoltar.hidden = YES;
+    }
+    
     return !(navigationType == UIWebViewNavigationTypeLinkClicked);
 }
-
-//Finaliza
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    NSLog(@"Finalizou");
-
-}
-
 
 - (IBAction)btnVoltarPerfil:(id)sender {
     NSString *embedHTML = @"<html><head></head><body><a class=\"twitter-timeline\" href=\"https://twitter.com/CETSP_\" data-widget-id=\"519942987082502144\">Tweets de @CETSP_</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script></body></html>";
