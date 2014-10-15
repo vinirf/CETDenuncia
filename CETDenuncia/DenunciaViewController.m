@@ -101,7 +101,20 @@
          [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
          
          
-         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+         NSLog(@"Cidade do usuário %@", placemark.locality);
+         if (![placemark.locality isEqualToString:@"São Paulo"]) {
+             UIAlertView *alertView = [[UIAlertView alloc]
+                                       initWithTitle:@"Local inválido"
+                                       message:@"Você não pode enviar um tweet para a CETSP fora da cidade de São Paulo!"
+                                       delegate:self
+                                       cancelButtonTitle:@"OK"
+                                       otherButtonTitles:nil];
+             [alertView show];
+             return;
+         }
+         
+         
+         if ([SLComposeViewController isAvailableForServiceType: SLServiceTypeTwitter]){
              
              SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
              [tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
@@ -116,7 +129,7 @@
          }
          else{
              UIAlertView *alertView = [[UIAlertView alloc]
-                                       initWithTitle:@"Descuple"
+                                       initWithTitle:@"Desculpe"
                                        message:@"Você não pode enviar um tweet agora, verifique se seu dispositivo está conectado à internet e se você tem pelo menos uma conta do Twitter configurada."
                                        delegate:self
                                        cancelButtonTitle:@"OK"
@@ -126,7 +139,7 @@
 
      }];
     
-    }
+}
 
 
 
