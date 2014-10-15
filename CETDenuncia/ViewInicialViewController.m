@@ -40,13 +40,9 @@
     
 }
 
--(void)chamaAlertView{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"CET"
-                                                    message:@"O Aplicativo não pode ser iniciado sem internet!"
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+-(void)semConexaoComInternet{
+    self.iconeSemConexao.hidden = NO;
+    self.labelSemConexao.hidden = NO;
 }
 
 -(void)pedeLocalizacaoUsuario{
@@ -68,8 +64,8 @@
     
     //Verificca se há conexão com a internet
     if (networkStatus == NotReachable) {
-        [self chamaAlertView];
-        
+        [self semConexaoComInternet];
+    
     }else{
         
         CLGeocoder *ceo = [[CLGeocoder alloc]init];
@@ -84,13 +80,13 @@
                      
             NSLog(@"f88orm = %@",[Usuario sharedManager].localizacao);
                 
-//            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {
-//                [self tutorialVisualizado];
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {
+                [self tutorialVisualizado];
                 [self performSegueWithIdentifier:@"entraNoTutorial" sender: self];
 
-//            }else{
-//                [self performSegueWithIdentifier:@"entraNoApp" sender: self];
-//            }
+            }else{
+                [self performSegueWithIdentifier:@"entraNoApp" sender: self];
+            }
 
         }];
         

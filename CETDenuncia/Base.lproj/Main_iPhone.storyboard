@@ -68,10 +68,22 @@
                                 <rect key="frame" x="36" y="260" width="248" height="47"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sem-interntet.png" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-31-oBu">
+                                <rect key="frame" x="130" y="415" width="60" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sem conexão" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9As-ew-JEJ">
+                                <rect key="frame" x="0.0" y="473" width="320" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="iconeSemConexao" destination="dhN-31-oBu" id="P9E-WT-dsi"/>
+                        <outlet property="labelSemConexao" destination="9As-ew-JEJ" id="tJS-ul-HjS"/>
                         <segue destination="gwg-W9-RnK" kind="modal" identifier="entraNoApp" modalTransitionStyle="crossDissolve" id="dA2-9Z-UiS"/>
                         <segue destination="4T2-Xg-Hjl" kind="modal" identifier="entraNoTutorial" id="dcw-Pj-5mF"/>
                     </connections>
@@ -267,6 +279,7 @@
         <image name="btoOlhoVivo.png" width="34" height="34"/>
         <image name="logo-superior.png" width="123" height="19"/>
         <image name="logo-telainicial.png" width="249" height="47"/>
+        <image name="sem-interntet.png" width="320" height="290"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -274,6 +287,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Po1-5A-Rza"/>
+        <segue reference="dA2-9Z-UiS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,9 @@
 #import "TutorialViewController.h"
 
 @interface TutorialViewController ()
+
+@property int auxiliar3aPagina;
+
 @end
 
 @implementation TutorialViewController
@@ -22,6 +25,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    self.auxiliar3aPagina = 1;
     
     //Títulos e imagens
     self.pageTitles = @[@"Fotografe e denuncie uma irregularidade diretamente para a CET no Twitter.", @"Acompanhe em tempo real o Twitter da CET.", @"Com esse mapa, fique ligado nas ocorrências próximas à você."];
@@ -41,6 +46,7 @@
     [self addChildViewController: self.tutorialViewController];
     [self.view addSubview: self.tutorialViewController.view];
     [self.tutorialViewController didMoveToParentViewController:self];
+    
 }
 
 - (void)didReceiveMemoryWarning{
@@ -60,26 +66,19 @@
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
     
-    if ([_tutorialViewController.viewControllers.lastObject isEqual: pageContentViewController]) {
+    //Quando estiver na 3a página mostra o botão
+    if(index == 2)
         self.botaoComecar.hidden = NO;
-    }else{
+    else
         self.botaoComecar.hidden = YES;
-    }
     
-    
-    
-    
-    
+
     return pageContentViewController;
 }
 
 
 
-
-
-
 #pragma mark - Page View Controller Data Source
-
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
     NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     
@@ -88,6 +87,9 @@
     }
     
     index--;
+    
+
+    
     return [self viewControllerAtIndex: index];
 }
 
@@ -106,6 +108,8 @@
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController{
+    
+
     
     return [self.pageTitles count];
 }

@@ -52,6 +52,7 @@
 		0BE5BEE819DF1D37005CF557 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5BEE719DF1D37005CF557 /* Reachability.m */; };
 		A813DC3519E8821B00DBCDD4 /* pino.png in Resources */ = {isa = PBXBuildFile; fileRef = A813DC3419E8821B00DBCDD4 /* pino.png */; };
 		A813DC3719E883E000DBCDD4 /* pino-cornetasp.png in Resources */ = {isa = PBXBuildFile; fileRef = A813DC3619E883E000DBCDD4 /* pino-cornetasp.png */; };
+		A8313B7519EEF407001FC6C0 /* sem-interntet.png in Resources */ = {isa = PBXBuildFile; fileRef = A8313B7419EEF407001FC6C0 /* sem-interntet.png */; };
 		A8350DB219E70C1B006689C2 /* logo-telainicial.png in Resources */ = {isa = PBXBuildFile; fileRef = A8350DB119E70C1B006689C2 /* logo-telainicial.png */; };
 		A8350DB419E70CAB006689C2 /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = A8350DB319E70CAB006689C2 /* tutorial.png */; };
 		A8350DB619E70CC1006689C2 /* logo-superior.png in Resources */ = {isa = PBXBuildFile; fileRef = A8350DB519E70CC1006689C2 /* logo-superior.png */; };
@@ -154,6 +155,7 @@
 		0BE5BEE719DF1D37005CF557 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = CETDenuncia/Reachability.m; sourceTree = "<group>"; };
 		A813DC3419E8821B00DBCDD4 /* pino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pino.png; sourceTree = "<group>"; };
 		A813DC3619E883E000DBCDD4 /* pino-cornetasp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pino-cornetasp.png"; sourceTree = "<group>"; };
+		A8313B7419EEF407001FC6C0 /* sem-interntet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sem-interntet.png"; sourceTree = "<group>"; };
 		A8350DB119E70C1B006689C2 /* logo-telainicial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-telainicial.png"; sourceTree = "<group>"; };
 		A8350DB319E70CAB006689C2 /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
 		A8350DB519E70CC1006689C2 /* logo-superior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-superior.png"; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				A860439A19EDBF780093D155 /* Tela-Denuncia.png */,
 				A860439B19EDBF780093D155 /* Tela-Localizaçao.png */,
 				A860439C19EDBF780093D155 /* Tela-OlhoVivo.png */,
+				A8313B7419EEF407001FC6C0 /* sem-interntet.png */,
 				A8350DB119E70C1B006689C2 /* logo-telainicial.png */,
 				A8350DB519E70CC1006689C2 /* logo-superior.png */,
 				A8B2D0BE19E5CD7C00294D5D /* background-dregrade.png */,
@@ -507,6 +510,7 @@
 				0BB77D5A19CCA4DA00343AC1 /* Images.xcassets in Resources */,
 				A813DC3519E8821B00DBCDD4 /* pino.png in Resources */,
 				A860439E19EDBF780093D155 /* Tela-Localizaçao.png in Resources */,
+				A8313B7519EEF407001FC6C0 /* sem-interntet.png in Resources */,
 				A8B2D0BC19E5CC4500294D5D /* btoMapa.png in Resources */,
 				0BB77D7819CCA7A200343AC1 /* imageCET.png in Resources */,
 				0BB77DB619CCB4C100343AC1 /* CETIcone.png in Resources */,

@@ -16,4 +16,7 @@
 
 @property CLLocationManager *locationManager;
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconeSemConexao;
+@property (weak, nonatomic) IBOutlet UILabel *labelSemConexao;
+
 @end
