@@ -105,7 +105,7 @@
          if (![placemark.locality isEqualToString:@"São Paulo"]) {
              UIAlertView *alertView = [[UIAlertView alloc]
                                        initWithTitle:@"Local inválido"
-                                       message:@"Você não pode enviar um tweet para a CETSP fora da cidade de São Paulo!"
+                                       message:@"Você não pode enviar um tweet para a CETSP fora da cidade de São Paulo, ou não permitiu acesso a localização."
                                        delegate:self
                                        cancelButtonTitle:@"OK"
                                        otherButtonTitles:nil];
