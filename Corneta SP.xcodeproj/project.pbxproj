@@ -69,6 +69,7 @@
 		A8B2D0C319E5CDF200294D5D /* btoFoto.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B2D0C219E5CDF200294D5D /* btoFoto.png */; };
 		A8B2D0C519E5CE5A00294D5D /* btoDenunciar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B2D0C419E5CE5A00294D5D /* btoDenunciar.png */; };
 		A8B2D0C719E5D89500294D5D /* botao-voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B2D0C619E5D89500294D5D /* botao-voltar.png */; };
+		A8D6A36019F0429C00F1EE90 /* btoDenuncia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D6A35F19F0429C00F1EE90 /* btoDenuncia@2x.png */; };
 		A8F58D8719D48D30008B8E06 /* CoordenadaCetSiteLentidao.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F58D8619D48D30008B8E06 /* CoordenadaCetSiteLentidao.m */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +176,7 @@
 		A8B2D0C219E5CDF200294D5D /* btoFoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btoFoto.png; sourceTree = "<group>"; };
 		A8B2D0C419E5CE5A00294D5D /* btoDenunciar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btoDenunciar.png; sourceTree = "<group>"; };
 		A8B2D0C619E5D89500294D5D /* botao-voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-voltar.png"; sourceTree = "<group>"; };
+		A8D6A35F19F0429C00F1EE90 /* btoDenuncia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btoDenuncia@2x.png"; sourceTree = "<group>"; };
 		A8F58D8519D48D30008B8E06 /* CoordenadaCetSiteLentidao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordenadaCetSiteLentidao.h; sourceTree = "<group>"; };
 		A8F58D8619D48D30008B8E06 /* CoordenadaCetSiteLentidao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordenadaCetSiteLentidao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -310,6 +312,7 @@
 				A8B2D0C219E5CDF200294D5D /* btoFoto.png */,
 				A8B2D0C419E5CE5A00294D5D /* btoDenunciar.png */,
 				A8B2D0B819E5CC4500294D5D /* btoDenuncia.png */,
+				A8D6A35F19F0429C00F1EE90 /* btoDenuncia@2x.png */,
 				A8B2D0B919E5CC4500294D5D /* btoMapa.png */,
 				A8B2D0BA19E5CC4500294D5D /* btoOlhoVivo.png */,
 				A8B2D0C619E5D89500294D5D /* botao-voltar.png */,
@@ -519,6 +522,7 @@
 				0BB77DB619CCB4C100343AC1 /* CETIcone.png in Resources */,
 				A8B2D0BF19E5CD7C00294D5D /* background-dregrade.png in Resources */,
 				A8350DB219E70C1B006689C2 /* logo-telainicial.png in Resources */,
+				A8D6A36019F0429C00F1EE90 /* btoDenuncia@2x.png in Resources */,
 				A8B2D0C319E5CDF200294D5D /* btoFoto.png in Resources */,
 				A8B2D0BD19E5CC4500294D5D /* btoOlhoVivo.png in Resources */,
 				A860439D19EDBF780093D155 /* Tela-Denuncia.png in Resources */,

@@ -41,7 +41,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="btoDenuncia.png" id="42X-iU-hDf"/>
+                    <tabBarItem key="tabBarItem" title="" image="btoDenuncia@2x.png" id="42X-iU-hDf"/>
                     <connections>
                         <outlet property="imageView" destination="ZVL-QL-FL4" id="Ekj-To-wjf"/>
                         <outlet property="imgBackground" destination="ER0-Rn-tbc" id="TR2-su-bMY"/>
@@ -274,7 +274,7 @@
     <resources>
         <image name="background-dregrade.png" width="320" height="568"/>
         <image name="botao-voltar.png" width="24" height="40"/>
-        <image name="btoDenuncia.png" width="35" height="32"/>
+        <image name="btoDenuncia@2x.png" width="320" height="568"/>
         <image name="btoDenunciar.png" width="249" height="63"/>
         <image name="btoFoto.png" width="250" height="215"/>
         <image name="btoMapa.png" width="32" height="34"/>
