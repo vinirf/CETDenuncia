@@ -61,6 +61,8 @@
         [self.locationManager requestAlwaysAuthorization];
     }
     
+    NSLog(@"Localização incial: %@", self.locationManager.location);
+    
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];

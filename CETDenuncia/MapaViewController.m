@@ -253,7 +253,7 @@
     
     
     if([pinView.annotation.title isEqualToString:@"Ocorrência"]){
-        [pinView setImage:[UIImage imageNamed:@"pino-cornetasp.png"]];
+        [pinView setImage:[UIImage imageNamed:@"pino@2x.png"]];
     }
     
     
