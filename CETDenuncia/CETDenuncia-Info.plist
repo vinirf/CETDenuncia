@@ -44,5 +44,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>kCLAuthorizationStatusAuthorizedAlways</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Explain for what are you using the user location</string>
 </dict>
 </plist>

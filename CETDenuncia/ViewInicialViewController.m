@@ -8,6 +8,8 @@
 
 #import "ViewInicialViewController.h"
 
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 @interface ViewInicialViewController ()
 @end
 
@@ -31,10 +33,10 @@
     fadeAnim.duration = 3.0;
     [self.view.layer addAnimation:fadeAnim forKey:@"opacity"];
     
-    //Puxa localização do usuário
+    //Solicita e guarda coordenadas do usuário
     [self pedeLocalizacaoUsuario];
     
-    //
+    //Guarda o local (rua, cidade .. etc) e chama o tutorial ou tela de denuncia
     [self performSelector:@selector(chamaTabBarController) withObject:NULL afterDelay:3.0];
     
     
@@ -46,11 +48,19 @@
     self.labelSemConexao.hidden = NO;
 }
 
+//Solicita e guarda coordenada
 -(void)pedeLocalizacaoUsuario{
     
     //Localização
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    
+    //Se for uma versão igual o maior do iOS8 requer autorização especial
+    if(IS_OS_8_OR_LATER) {
+        [self.locationManager requestWhenInUseAuthorization];
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];

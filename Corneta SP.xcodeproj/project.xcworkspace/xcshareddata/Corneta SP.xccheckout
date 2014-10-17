@@ -10,29 +10,29 @@
 	<string>Corneta SP</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>382E06E0-DECC-4646-A7E8-0DD2B2C36B01</key>
+		<key>0D0B5F9C01A71A0F93EB5EB726C5A95F74F94CAF</key>
 		<string>https://github.com/vinirf/CETDenuncia.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Corneta SP.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>382E06E0-DECC-4646-A7E8-0DD2B2C36B01</key>
+		<key>0D0B5F9C01A71A0F93EB5EB726C5A95F74F94CAF</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/vinirf/CETDenuncia.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>382E06E0-DECC-4646-A7E8-0DD2B2C36B01</string>
+	<string>0D0B5F9C01A71A0F93EB5EB726C5A95F74F94CAF</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>382E06E0-DECC-4646-A7E8-0DD2B2C36B01</string>
+			<string>0D0B5F9C01A71A0F93EB5EB726C5A95F74F94CAF</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CETDenuncia</string>
 		</dict>

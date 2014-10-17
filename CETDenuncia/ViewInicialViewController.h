@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Usuario.h"
 
-@interface ViewInicialViewController : UIViewController <UIAlertViewDelegate,CLLocationManagerDelegate>
+@interface ViewInicialViewController : UIViewController <UIAlertViewDelegate, CLLocationManagerDelegate>
 
 @property CLLocationManager *locationManager;
 
