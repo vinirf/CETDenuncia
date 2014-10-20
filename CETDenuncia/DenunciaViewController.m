@@ -21,12 +21,13 @@
     
     //Gesture para adicionar foto
     self.tapAddFoto = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tirarFoto)];
-    
     self.tapAddFoto .numberOfTouchesRequired = 1;
     self.tapAddFoto .enabled = YES;
     self.imageView.userInteractionEnabled = YES;
     [self.imageView addGestureRecognizer: self.tapAddFoto];
     
+    //Arredonda img de tirar foto
+    [[self.imgBackTirarFoto layer] setCornerRadius: 10];
 }
 
 

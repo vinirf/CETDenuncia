@@ -48,6 +48,7 @@
                     <tabBarItem key="tabBarItem" title="" image="tabIconeDenuncia@2x.png" id="42X-iU-hDf"/>
                     <connections>
                         <outlet property="imageView" destination="ZVL-QL-FL4" id="Ekj-To-wjf"/>
+                        <outlet property="imgBackTirarFoto" destination="kup-Xf-pAj" id="4NP-e8-6Zs"/>
                         <outlet property="imgBackground" destination="ER0-Rn-tbc" id="TR2-su-bMY"/>
                         <outlet property="outBtoDenunciar" destination="Q7r-DF-BRB" id="WM3-qJ-sOj"/>
                     </connections>

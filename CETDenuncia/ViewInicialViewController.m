@@ -57,8 +57,8 @@
     
     //Se for uma versão igual o maior do iOS8 requer autorização especial
     if(IS_OS_8_OR_LATER) {
-        [self.locationManager requestWhenInUseAuthorization];
-        [self.locationManager requestAlwaysAuthorization];
+//        [self.locationManager requestWhenInUseAuthorization];
+//        [self.locationManager requestAlwaysAuthorization];
     }
     
     NSLog(@"Localização incial: %@", self.locationManager.location);
