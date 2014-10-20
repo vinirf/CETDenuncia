@@ -56,7 +56,7 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
     
-    [[Usuario sharedManager]setaPosicaoUsuario:self.locationManager.location.coordinate];
+    [[Usuario sharedManager]setaPosicaoUsuario: self.locationManager.location.coordinate];
     
     CLGeocoder *ceo = [[CLGeocoder alloc]init];
     CLLocationCoordinate2D coord = [[Usuario sharedManager]locUsuario];
@@ -75,7 +75,11 @@
 //         NSLog(@"Bairro %@",placemark.subLocality);
 //         NSLog(@"location %@",placemark.location);
          
-         [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
+         //Corta o número da rua
+         NSArray *string = [placemark.name componentsSeparatedByString:@","];
+         NSLog(@"Rua %@", string.firstObject);
+         
+         [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",string.firstObject];
          
          
          //Só permite o tweet se o usuário estiver em SP
@@ -99,7 +103,7 @@
              
              
              NSString *endereco = [NSString stringWithFormat:@"%@%@%@%@",self.nomeTwitter,@" ",[Usuario sharedManager].localizacao,@", "];
-             [tweetSheet setInitialText:endereco];
+             [tweetSheet setInitialText: endereco];
              
              [self presentViewController: tweetSheet animated:YES completion:nil];
              
@@ -117,8 +121,6 @@
      }];
     
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////// TIRAR FOTO //////////////////////////////////////////////////////////////////////////////////////
 

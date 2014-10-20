@@ -32,6 +32,6 @@
 -(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetOcorrencia:(CoordenadaCetSite*)CoordCet;
 
 -(void)criaCoordenadaSiteCETLentidao:(CoordenadaCetSiteLentidao *)coord;
--(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet;
-    
+//-(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet;
+
 @end

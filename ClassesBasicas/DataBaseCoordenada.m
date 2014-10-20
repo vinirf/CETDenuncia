@@ -84,8 +84,8 @@
 
 }
 
--(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet{
-    
+//-(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet{
+
 //    MKPointAnnotation *ponto = [[MKPointAnnotation alloc] init];
 //    CLGeocoder* geocoder = [[CLGeocoder alloc]init];
 //    NSString *local = [NSString stringWithFormat:@"%@%@%@",[CoordCet corredor],@" ",@"São Paulo"];
@@ -116,7 +116,7 @@
 //    
 //    return ponto;
     
-}
+//}
 
 
 @end
