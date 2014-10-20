@@ -9,32 +9,29 @@
 #import "TimeLineCETViewController.h"
 
 @interface TimeLineCETViewController()
-
-@property int auxiliarEntrouNoRequest;
-
 @end
 
 @implementation TimeLineCETViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
     }
     return self;
 }
 
+//Sobrepõe a barra de status
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
 
-
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    //Delegate da Web view
     self.TimeLineCETWebView.delegate = self;
     
-    //load html content into webview
+    //Carrega o conteúdo do html no webview
     NSString *embedHTML = @"<html><head></head><body><a class=\"twitter-timeline\" href=\"https://twitter.com/CETSP_\" data-widget-id=\"519942987082502144\">Tweets de @CETSP_</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script></body></html>";
     
     [self.TimeLineCETWebView loadHTMLString:embedHTML baseURL:nil];
@@ -42,18 +39,13 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    self.auxiliarEntrouNoRequest = 1;
-}
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
 
 
-
-/* Metodo do delegate UIWebView
-   Bloqueia o acesso para links externos*/
+//BLOCK DE LINKS EXTERNOS
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     
     NSLog(@"URL: %@", request.URL);

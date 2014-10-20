@@ -427,10 +427,10 @@
 		A860438C19ED9C200093D155 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				A860438D19EDABE60093D155 /* PageContentViewController.h */,
-				A860438E19EDABE60093D155 /* PageContentViewController.m */,
 				A860438919ED9C180093D155 /* TutorialViewController.h */,
 				A860439019EDB5830093D155 /* TutorialViewController.m */,
+				A860438D19EDABE60093D155 /* PageContentViewController.h */,
+				A860438E19EDABE60093D155 /* PageContentViewController.m */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";

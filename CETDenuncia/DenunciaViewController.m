@@ -19,14 +19,14 @@
     //Conta CET
     self.nomeTwitter = @"@CETSP_";
     
-    //Gesture para adicionar foto
+    //Gesture para adicionar foto no tweet
     self.tapAddFoto = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tirarFoto)];
     self.tapAddFoto .numberOfTouchesRequired = 1;
     self.tapAddFoto .enabled = YES;
     self.imageView.userInteractionEnabled = YES;
     [self.imageView addGestureRecognizer: self.tapAddFoto];
     
-    //Arredonda img de tirar foto
+    //Arredonda background da imagem da foto
     [[self.imgBackTirarFoto layer] setCornerRadius: 10];
 }
 
@@ -35,45 +35,20 @@
     [super didReceiveMemoryWarning];
 }
 
-
 -(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+    [super viewDidAppear: animated];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+    [super viewDidDisappear: animated];
 }
 
 
-///////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////// TWETAR //////////////////////////////////////////////////////////////////////////////////////
 
 
-- (void)locatilizaUsuario{
-    
-    CLGeocoder *ceo = [[CLGeocoder alloc]init];
-    CLLocationCoordinate2D coord = [[Usuario sharedManager]locUsuario];
-    CLLocation *loc = [[CLLocation alloc]initWithLatitude:coord.latitude  longitude:coord.longitude] ;
-    
-    [ceo reverseGeocodeLocation: loc completionHandler:
-     ^(NSArray *placemarks, NSError *error) {
-         CLPlacemark *placemark = [placemarks objectAtIndex:0];
-         //NSLog(@"placemark %@",placemark);
-         //String to hold address
-         //NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-         //NSLog(@"addressDictionary %@", placemark.addressDictionary);
-         //         NSLog(@"Cidade %@",placemark.locality); // Extract the city name
-         //         NSLog(@"Rua %@",placemark.name);
-         //         NSLog(@"Bairro %@",placemark.subLocality);
-         //NSLog(@"location %@",placemark.location);
-         
-         [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
-         
-     }];
-    
-}
-
-
-- (IBAction)buttonTwetar:(id)sender {
+- (IBAction)buttonTwetar:(id)sender{
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -89,20 +64,21 @@
     
     [ceo reverseGeocodeLocation: loc completionHandler:
      ^(NSArray *placemarks, NSError *error) {
+         
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
-         //NSLog(@"placemark %@",placemark);
-         //String to hold address
-         //NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-         //NSLog(@"addressDictionary %@", placemark.addressDictionary);
-         //         NSLog(@"Cidade %@",placemark.locality); // Extract the city name
-         //         NSLog(@"Rua %@",placemark.name);
-         //         NSLog(@"Bairro %@",placemark.subLocality);
-         //NSLog(@"location %@",placemark.location);
+//         NSLog(@"placemark %@", placemark);
+//
+//         NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+//         NSLog(@"addressDictionary %@", placemark.addressDictionary);
+//         NSLog(@"Cidade %@",placemark.locality);
+//         NSLog(@"Rua %@",placemark.name);
+//         NSLog(@"Bairro %@",placemark.subLocality);
+//         NSLog(@"location %@",placemark.location);
          
          [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
          
          
-         NSLog(@"Cidade do usuário %@", placemark.locality);
+         //Só permite o tweet se o usuário estiver em SP
          if (![placemark.locality isEqualToString:@"São Paulo"]) {
              UIAlertView *alertView = [[UIAlertView alloc]
                                        initWithTitle:@"Local inválido"
@@ -144,10 +120,10 @@
 
 
 
+////////////////////////////////////////////////////////////////////////////////////// TIRAR FOTO //////////////////////////////////////////////////////////////////////////////////////
+
 
 -(void)tirarFoto{
-    NSLog(@"Entrou pra tirar foto!");
-    
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
@@ -168,73 +144,14 @@
     self.imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [self.imageView setImage:self.imageView.image];
     
-    // UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
-    
     [self dismissViewControllerAnimated:YES completion:nil];
-    
     
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {    
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{    
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
-
-
-//-(void)pegarDadosTransitoCET{
-//    
-//    NSString* url = @"http://www.cetsp.com.br/";
-//    NSURL* query = [NSURL URLWithString:url];
-//    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSUTF8StringEncoding error:nil];
-//    
-//    
-//    NSString *string=result;
-//    NSRange searchFromRange = [string rangeOfString:@"<body>"];
-//    NSRange searchToRange = [string rangeOfString:@"</body>"];
-//    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
-//    
-//    NSString *stringFinal = substring;
-//    
-//    NSRange continua =[stringFinal rangeOfString:@"<div class=\"boxZona"];
-//    int i=0;
-//    
-//    while(continua.location != NSNotFound){
-//        i +=1;
-//        
-//        stringFinal = [stringFinal substringFromIndex:continua.location];
-//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<h4>"].location+4];
-//        NSString *vra = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</h4>"].location-2];
-//        
-//        switch (i) {
-//            case 1:
-//                self.label1.text = vra;
-//                break;
-//            case 2:
-//                self.label2.text = vra;
-//                break;
-//            case 3:
-//                self.label3.text = vra;
-//                break;
-//            case 4:
-//                self.label4.text = vra;
-//                break;
-//            case 5:
-//                self.label5.text = vra;
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//        
-//        continua = [stringFinal rangeOfString:@"<div class=\"boxZona"];
-//        
-//        
-//        
-//    }
-//    
-//    continua = [stringFinal rangeOfString:@"<div class=\"boxZona"];
-//}
-
 
 
 @end

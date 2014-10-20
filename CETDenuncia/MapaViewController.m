@@ -13,7 +13,7 @@
 @implementation MapaViewController
 
 
-//Ciclo de vida da View -----------------------------------------------------------
+//VIEW ------------------------------------------------------------------------------
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self){
@@ -28,6 +28,7 @@
     self.mapa.showsUserLocation = YES;
     [self.mapa setDelegate: self];
 
+    //Parse do HTML
     [self serializaDadosSiteCET];
     
 }
@@ -50,13 +51,11 @@
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     
     [[self mapa] setCenterCoordinate: userLocation.location.coordinate];
-   // [[Usuario sharedManager]setaPosicaoUsuario:userLocation.location.coordinate];
-    
 }
 
 
 //Aplica zoom ao mapa na região em que o usuário se encontra
--(void)zoomToUserRegion {
+-(void)zoomToUserRegion{
     
     MKCoordinateRegion region;
     region.center.latitude = self.mapa.userLocation.coordinate.latitude;
@@ -159,76 +158,74 @@
 }
 
 -(void)serializaDadosSiteCETLentidao{
-    
-    NSString *problema = @"Lentidão por corredor não disponível no momento";
-    NSString* url = @"http://cetsp1.cetsp.com.br/monitransmapa/IMG1/lentidao.asp?ordem=N";
-    NSURL* query = [NSURL URLWithString:url];
-    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
-    
-    int contando =0;
-    while([result rangeOfString:problema].location != NSNotFound){
-        contando += 1;
-        
-        NSString *s = [NSString stringWithFormat:@"%@%d%@",@"http://cetsp1.cetsp.com.br/monitransmapa/IMG",contando,@"/lentidao.asp?ordem=N"];
-        NSURL* query = [NSURL URLWithString:s];
-        result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
-        
-    }
-    
-    
-    NSString *string=result;
-    NSRange searchFromRange = [string rangeOfString:@"<table>"];
-    NSRange searchToRange = [string rangeOfString:@"</body>"];
-    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
-    
-    NSString *stringFinal = substring;
-    
-    NSLog(@"v = %@", stringFinal);
-    
-    //Controla o laco de repeticao
-    NSRange continua = [stringFinal rangeOfString:@"<tr class"];
-    
-    //Faz enquanto encontrar o ultimo #EXTINF:-1,
-    while(continua.location != NSNotFound){
-        
-        CoordenadaCetSiteLentidao *coordLentidao = [[CoordenadaCetSiteLentidao alloc]init];
-
-        
-        //Corredor
-        stringFinal = [stringFinal substringFromIndex: continua.location];
-        stringFinal = [stringFinal substringFromIndex: [stringFinal rangeOfString:@"<td nowrap>"].location+11];
-        coordLentidao.corredor = [stringFinal substringToIndex: [stringFinal rangeOfString:@"</td>"].location-1];
-        
-        //Sentido
-        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+4];
-        coordLentidao.sentido = [stringFinal substringToIndex: [stringFinal rangeOfString:@"</td>"].location-20];
-        
-        //Local
-        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+4];
-        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+21];
-        coordLentidao.local = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</td>"].location-14];
-        
-        //Local
-        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td align=right>"].location+18];
-        coordLentidao.tamanho = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</td>"].location-14];
-
-        
-        NSLog(@"corredor = %@", coordLentidao.corredor);
-        NSLog(@"sentido = %@", coordLentidao.sentido);
-        NSLog(@"via = %@", coordLentidao.local);
-        NSLog(@"tamanho = %@m\n", coordLentidao.tamanho);
-        
-
-        
-//        [[DataBaseCoordenada sharedManager] criaCoordenadaSiteCETLentidao: coordLentidao];
-//        [self marcarPosicaoNoMapaDiretoSiteCetLentidao: coordLentidao];
-
-        
-        continua = [stringFinal rangeOfString:@"<tr class"];
-        
-    }
-    continua = [stringFinal rangeOfString:@"<tr class"];
-    
+//
+//    NSString *problema = @"Lentidão por corredor não disponível no momento";
+//    NSString* url = @"http://cetsp1.cetsp.com.br/monitransmapa/IMG1/lentidao.asp?ordem=N";
+//    NSURL* query = [NSURL URLWithString:url];
+//    NSString* result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
+//    
+//    int contando =0;
+//    while([result rangeOfString:problema].location != NSNotFound){
+//        contando += 1;
+//        
+//        NSString *s = [NSString stringWithFormat:@"%@%d%@",@"http://cetsp1.cetsp.com.br/monitransmapa/IMG",contando,@"/lentidao.asp?ordem=N"];
+//        NSURL* query = [NSURL URLWithString:s];
+//        result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
+//        
+//    }
+//    
+//    
+//    NSString *string=result;
+//    NSRange searchFromRange = [string rangeOfString:@"<table>"];
+//    NSRange searchToRange = [string rangeOfString:@"</body>"];
+//    NSString *substring = [string substringWithRange:NSMakeRange(searchFromRange.location+searchFromRange.length, searchToRange.location-searchFromRange.location-searchFromRange.length)];
+//    
+//    NSString *stringFinal = substring;
+//    
+//    NSLog(@"v = %@", stringFinal);
+//    
+//    //Controla o laco de repeticao
+//    NSRange continua = [stringFinal rangeOfString:@"<tr class"];
+//    
+//    //Faz enquanto encontrar o ultimo #EXTINF:-1,
+//    while(continua.location != NSNotFound){
+//        
+//        CoordenadaCetSiteLentidao *coordLentidao = [[CoordenadaCetSiteLentidao alloc]init];
+//
+//        
+//        //Corredor
+//        stringFinal = [stringFinal substringFromIndex: continua.location];
+//        stringFinal = [stringFinal substringFromIndex: [stringFinal rangeOfString:@"<td nowrap>"].location+11];
+//        coordLentidao.corredor = [stringFinal substringToIndex: [stringFinal rangeOfString:@"</td>"].location-1];
+//        
+//        //Sentido
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+4];
+//        coordLentidao.sentido = [stringFinal substringToIndex: [stringFinal rangeOfString:@"</td>"].location-20];
+//        
+//        //Local
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+4];
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td>"].location+21];
+//        coordLentidao.local = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</td>"].location-14];
+//        
+//        //Local
+//        stringFinal = [stringFinal substringFromIndex:[stringFinal rangeOfString:@"<td align=right>"].location+18];
+//        coordLentidao.tamanho = [stringFinal substringToIndex:[stringFinal rangeOfString:@"</td>"].location-14];
+//
+//        
+//        NSLog(@"corredor = %@", coordLentidao.corredor);
+//        NSLog(@"sentido = %@", coordLentidao.sentido);
+//        NSLog(@"via = %@", coordLentidao.local);
+//        NSLog(@"tamanho = %@m\n", coordLentidao.tamanho);
+////        
+////        [[DataBaseCoordenada sharedManager] criaCoordenadaSiteCETLentidao: coordLentidao];
+////        [self marcarPosicaoNoMapaDiretoSiteCetLentidao: coordLentidao];
+//
+//        
+//        continua = [stringFinal rangeOfString:@"<tr class"];
+//        
+//    }
+//    continua = [stringFinal rangeOfString:@"<tr class"];
+//    
 }
 
 
@@ -237,12 +234,12 @@
 }
 
 -(void)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet{
-    [[self mapa] addAnnotation: [[DataBaseCoordenada sharedManager]marcarPosicaoNoMapaDiretoSiteCetLentidao: CoordCet]];
+//    [[self mapa] addAnnotation: [[DataBaseCoordenada sharedManager]marcarPosicaoNoMapaDiretoSiteCetLentidao: CoordCet]];
 }
 
 
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
     
     static NSString *annotationIdentifier = @"annotationIdentifier";
     MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];

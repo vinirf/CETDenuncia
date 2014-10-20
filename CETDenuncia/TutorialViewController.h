@@ -17,4 +17,11 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *botaoComecar;
 
+//PAGES
+-(PageContentViewController *)viewControllerAtIndex:(NSUInteger)index;
+-(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController;
+-(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController;
+-(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController;
+-(NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController;
+
 @end

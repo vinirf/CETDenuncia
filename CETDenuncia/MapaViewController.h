@@ -15,7 +15,18 @@
 
 @interface MapaViewController : UIViewController <MKMapViewDelegate>
 
-//Atributos
+//VIEW
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
+
+//MAPA
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;
+-(void)zoomToUserRegion;
+-(void)marcarPosicaoNoMapaDiretoSiteCetOcorrencia:(CoordenadaCetSite*)CoordCet;
+-(void)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet;
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation;
+
+//PARSE HTML
+-(void)serializaDadosSiteCET;
+-(void)serializaDadosSiteCETLentidao;
 
 @end

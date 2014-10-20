@@ -9,9 +9,6 @@
 #import "TutorialViewController.h"
 
 @interface TutorialViewController ()
-
-@property int auxiliar3aPagina;
-
 @end
 
 @implementation TutorialViewController
@@ -25,8 +22,6 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
-    self.auxiliar3aPagina = 1;
     
     //Títulos e imagens
     self.pageTitles = @[@"Fotografe e denuncie uma irregularidade diretamente para a CET no Twitter.", @"Acompanhe em tempo real o Twitter da CET.", @"Com esse mapa, fique ligado nas ocorrências próximas à você."];
@@ -54,7 +49,7 @@
 }
 
 
-- (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index{
+-(PageContentViewController *)viewControllerAtIndex:(NSUInteger)index{
     if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
         return nil;
     }
@@ -107,14 +102,11 @@
     return [self viewControllerAtIndex: index];
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController{
-    
-
-    
+-(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController{
     return [self.pageTitles count];
 }
 
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController{
+-(NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController{
     return 0;
 }
 

@@ -16,7 +16,15 @@
 
 @property CLLocationManager *locationManager;
 
+//VIEWS
 @property (weak, nonatomic) IBOutlet UIImageView *iconeSemConexao;
 @property (weak, nonatomic) IBOutlet UILabel *labelSemConexao;
+
+//CONEXÃO, TUTORIAL E INICIO DO APP
+-(void)semConexaoComInternet;
+-(void)pedeLocalizacaoUsuario;
+-(void)chamaTabBarController;
+-(void)tutorialVisualizado;
+
 
 @end

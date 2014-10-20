@@ -13,8 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIWebView *TimeLineCETWebView;
 @property (weak, nonatomic) IBOutlet UIImageView *barraSuperior;
 @property (weak, nonatomic) IBOutlet UIButton *outBtoVoltar;
-@property (weak, nonatomic) IBOutlet UIButton *btoVoltar;
 
+//BLOCK DE LINKS EXTERNOS
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 
 @end

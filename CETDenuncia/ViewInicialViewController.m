@@ -23,7 +23,7 @@
     return self;
 }
 
-- (void)viewDidLoad{
+-(void)viewDidLoad{
     [super viewDidLoad];
     
     //Animação de entrada com o logo do app
@@ -39,7 +39,10 @@
     //Guarda o local (rua, cidade .. etc) e chama o tutorial ou tela de denuncia
     [self performSelector:@selector(chamaTabBarController) withObject:NULL afterDelay:3.0];
     
-    
+}
+
+- (void)didReceiveMemoryWarning{
+    [super didReceiveMemoryWarning];
 }
 
 //Mostra view com icones de sem conexão
@@ -109,10 +112,7 @@
 
 }
 
-- (void)didReceiveMemoryWarning{
-    [super didReceiveMemoryWarning];
-}
-
+//Salva que o tutorial já foi vizualizado
 -(void)tutorialVisualizado{
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"tutorialVisto"];
     [[NSUserDefaults standardUserDefaults] synchronize];

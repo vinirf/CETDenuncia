@@ -16,20 +16,22 @@
 
 @interface DenunciaViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,MKMapViewDelegate>
 
-
 @property NSString *nomeTwitter;
-@property  NSString *imageString;
-
+@property NSString *imageString;
 @property MKMapView *mapa;
 @property CLLocationManager *locationManager;
-
 @property UITapGestureRecognizer *tapAddFoto;
 
-
+//VIEWS
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackTirarFoto;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *outBtoDenunciar;
+
+//TIRAR FOTO
+-(void)tirarFoto;
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
 
 
 
