@@ -8,7 +8,6 @@
 
 #import "Usuario.h"
 
-
 @implementation Usuario
 
 +(Usuario*)sharedManager{
@@ -33,7 +32,6 @@
 -(void)setaPosicaoUsuario:(CLLocationCoordinate2D)posUsuario{
     self.locUsuario = posUsuario;
 }
-
 
 
 @end
