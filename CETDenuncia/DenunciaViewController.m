@@ -66,8 +66,7 @@
      ^(NSArray *placemarks, NSError *error) {
          
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
-//         NSLog(@"placemark %@", placemark);
-//
+
 //         NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
 //         NSLog(@"addressDictionary %@", placemark.addressDictionary);
 //         NSLog(@"Cidade %@",placemark.locality);
