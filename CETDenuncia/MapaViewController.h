@@ -10,7 +10,6 @@
 #import <MapKit/MapKit.h>
 #import "DataBaseCoordenada.h"
 #import "CoordenadaCetSite.h"
-#import "CoordenadaCetSiteLentidao.h"
 #import "Usuario.h"
 
 @interface MapaViewController : UIViewController <MKMapViewDelegate>
@@ -22,15 +21,13 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
 
 //MAPA
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;
 -(void)zoomToUserRegion;
--(void)marcarPosicaoNoMapaDiretoSiteCetOcorrencia:(CoordenadaCetSite*)CoordCet;
--(void)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet;
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation;
+-(void)marcarPosicaoNoMapaDiretoSiteCetOcorrencia:(CoordenadaCetSite*)CoordCet;
 
 //PARSE HTML
 -(void)serializaDadosSiteCET;
--(void)serializaDadosSiteCETLentidao;
 
 
 @end

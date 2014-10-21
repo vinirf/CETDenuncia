@@ -45,8 +45,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>kCLAuthorizationStatusAuthorizedAlways</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Explain for what are you using the user location</string>
+	<string>Informe ocorrências para a CET SP com sua localização.</string>
 </dict>
 </plist>

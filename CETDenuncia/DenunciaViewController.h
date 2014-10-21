@@ -29,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackTirarFoto;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *outBtoDenunciar;
+@property (weak, nonatomic) IBOutlet UIView *viewInformativo;
+- (IBAction)btoInformativo:(id)sender;
 
 //TIRAR FOTO
 -(void)tirarFoto;

@@ -8,7 +8,7 @@
 
 #import "ViewInicialViewController.h"
 
-#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define IS_IOS8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 @interface ViewInicialViewController ()
 @end
@@ -18,8 +18,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
+    if (self) {}
     return self;
 }
 
@@ -35,7 +34,6 @@
     
     //Solicita e guarda coordenadas do usuário
     [self pedeLocalizacaoUsuario];
-    
     
     //Guarda o local (rua, cidade .. etc) e chama o tutorial ou tela de denuncia
     [self performSelector:@selector(chamaTabBarController) withObject:NULL afterDelay:0.0];
@@ -60,12 +58,9 @@
     self.locationManager.delegate = self;
     
     //Se for uma versão igual o maior do iOS8 requer autorização especial
-    if(IS_OS_8_OR_LATER) {
-//        [self.locationManager requestWhenInUseAuthorization];
+    if(IS_IOS8_OR_LATER) {
 //        [self.locationManager requestAlwaysAuthorization];
     }
-    
-    NSLog(@"Localização incial: %@", self.locationManager.location);
     
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -109,7 +104,6 @@
         }];
         
     }
-    
 
 }
 
@@ -118,7 +112,6 @@
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"tutorialVisto"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
 
 
 @end

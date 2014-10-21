@@ -43,12 +43,6 @@
     [[[DataBaseCoordenada sharedManager] listaCoordenadasOcorrencia] addObject: coordenada];
 }
 
--(void)criaCoordenadaSiteCETLentidao:(CoordenadaCetSiteLentidao *)coordenada{
-//    [[[DataBaseCoordenada sharedManager] listaCoordenadasLentidao] addObject: coordenada];
-}
-
-
-
 -(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetOcorrencia:(CoordenadaCetSite*)CoordCet{
     
     MKPointAnnotation *ponto = [[MKPointAnnotation alloc] init];
@@ -83,41 +77,6 @@
     return ponto;
 
 }
-
-//-(MKPointAnnotation*)marcarPosicaoNoMapaDiretoSiteCetLentidao:(CoordenadaCetSiteLentidao*)CoordCet{
-
-//    MKPointAnnotation *ponto = [[MKPointAnnotation alloc] init];
-//    CLGeocoder* geocoder = [[CLGeocoder alloc]init];
-//    NSString *local = [NSString stringWithFormat:@"%@%@%@",[CoordCet corredor],@" ",@"São Paulo"];
-//    
-//    [geocoder geocodeAddressString:local completionHandler:^(NSArray* placemarks, NSError* error){
-//        for (CLPlacemark  *aPlacemark in placemarks) {
-//            
-//            
-//            CLLocationCoordinate2D localizacao;
-//            ponto.title = @"Lentidão";
-//            ponto.subtitle = [NSString stringWithFormat:@"%@ - Sentido: %@ - Tamanho: %@m",[CoordCet corredor],[CoordCet sentido],[CoordCet tamanho]];
-//            
-//            //Guarda a latitude e longitude para marcação no mapa
-//            NSString *latitude = [NSString stringWithFormat:@"%f", aPlacemark.location.coordinate.latitude];
-//            NSString *longitude = [NSString stringWithFormat:@"%f", aPlacemark.location.coordinate.longitude];
-//            localizacao.latitude = [latitude doubleValue];
-//            localizacao.longitude = [longitude doubleValue];
-//            
-//            CoodenadaLatitudeLongitude *cordll = [[CoodenadaLatitudeLongitude alloc]init];
-//            cordll.latitude = [latitude doubleValue];
-//            cordll.longitude = [longitude doubleValue];
-//            
-//            [[[DataBaseCoordenada sharedManager] listaCoordenadasLatLong]addObject: cordll];
-//            
-//            ponto.coordinate = localizacao;
-//        }
-//    }];
-//    
-//    return ponto;
-    
-//}
-
 
 @end
 

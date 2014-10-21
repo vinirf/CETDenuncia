@@ -23,9 +23,12 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    //Arredonda background da imagem da foto
+    [[self.botaoComecar layer] setCornerRadius: 10];
+    
     //Títulos e imagens
-    self.pageTitles = @[@"Fotografe e denuncie uma irregularidade diretamente para a CET no Twitter.", @"Acompanhe em tempo real o Twitter da CET.", @"Com esse mapa, fique ligado nas ocorrências próximas à você."];
-    self.pageImages = @[@"Tela-Denuncia.png", @"Tela-OlhoVivo.png", @"Tela-Localizaçao.png"];
+    self.pageTitles = @[@"Fotografe e denuncie uma irregularidade diretamente para a CET no Twitter.", @"Acompanhe em tempo real o Twitter da CET.", @"Com o mapa, fique ligado nas ocorrências próximas à você."];
+    self.pageImages = @[@"Tela-Denuncia.png", @"Tela-OlhoVivo.png", @"Tela-Localizacao.png"];
     
     //Cria o ViewController associado ao story board
     self.tutorialViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"PageViewController"];
@@ -36,7 +39,7 @@
     [self.tutorialViewController setViewControllers:viewControllers direction: UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     //Diminui o tamanho do Tutorial viewcontroller
-    self.tutorialViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+    self.tutorialViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 50);
     
     [self addChildViewController: self.tutorialViewController];
     [self.view addSubview: self.tutorialViewController.view];

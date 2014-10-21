@@ -26,8 +26,15 @@
     self.imageView.userInteractionEnabled = YES;
     [self.imageView addGestureRecognizer: self.tapAddFoto];
     
-    //Arredonda background da imagem da foto
+    //Arredonda bordas
+    [[self.viewInformativo layer] setCornerRadius: 10];
     [[self.imgBackTirarFoto layer] setCornerRadius: 10];
+    
+    //Configura sombra e cor da view de rotas
+    self.viewInformativo.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.viewInformativo.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
+    self.viewInformativo.layer.shadowRadius = 3.0f;
+    self.viewInformativo.layer.shadowOpacity = 1.0f;
     
     [[TimeLineCETViewController sharedManager]carregaComponentesIniciaisTwiter];
     //[[MapaViewController sharedManager]carregaComponentesIniciaisMapa];
@@ -147,8 +154,30 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{    
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 
+
+- (IBAction)btoInformativo:(id)sender {
+    
+    
+    if (self.viewInformativo.hidden) {
+        self.viewInformativo.hidden = NO;
+        
+        [[UITabBar appearance] setAlpha: 0.3];
+        self.imageView.alpha = 0.3;
+        self.imgBackground.alpha = 0.3;
+        self.imgBackTirarFoto.alpha = 0.3;
+        self.outBtoDenunciar.alpha = 0.3;
+    }else{
+        self.viewInformativo.hidden = YES;
+        
+        [[UITabBar appearance] setAlpha: 1];
+        self.imageView.alpha = 1;
+        self.imgBackground.alpha = 1;
+        self.imgBackTirarFoto.alpha = 1;
+        self.outBtoDenunciar.alpha = 1;
+    }
+    
+}
 
 @end
