@@ -12,6 +12,26 @@
 
 @implementation MapaViewController
 
++(MapaViewController*)sharedManager{
+    static MapaViewController *unicoUsuario = nil;
+    if(!unicoUsuario){
+        unicoUsuario = [[super allocWithZone:nil]init];
+    }
+    return unicoUsuario;
+}
+
+-(id)init{
+    self = [super init];
+    if(self){
+    }
+    return self;
+}
+
++(id)allocWithZone:(struct _NSZone *)zone{
+    return [self sharedManager];
+}
+
+
 
 //VIEW ------------------------------------------------------------------------------
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
@@ -21,15 +41,21 @@
     return self;
 }
 
-- (void)viewDidLoad{
-    [super viewDidLoad];
-    
+-(void)carregaComponentesIniciaisMapa{
     //Configura a localização atual como a localização do usuário
     self.mapa.showsUserLocation = YES;
     [self.mapa setDelegate: self];
-
+    [self viewWillLayoutSubviews];
+    
     //Parse do HTML
     [self serializaDadosSiteCET];
+}
+
+- (void)viewDidLoad{
+    
+    [super viewDidLoad];
+    
+    //[self carregaComponentesIniciaisMapa];
     
 }
 
@@ -38,11 +64,13 @@
     
     [self zoomToUserRegion];
     [self viewWillLayoutSubviews];
+    [self serializaDadosSiteCET];
 }
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
+
 //----------------------------------------------------------------------------------
 
 

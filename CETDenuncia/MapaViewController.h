@@ -15,6 +15,9 @@
 
 @interface MapaViewController : UIViewController <MKMapViewDelegate>
 
++(MapaViewController*)sharedManager;
+-(void)carregaComponentesIniciaisMapa;
+
 //VIEW
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
 
@@ -28,5 +31,6 @@
 //PARSE HTML
 -(void)serializaDadosSiteCET;
 -(void)serializaDadosSiteCETLentidao;
+
 
 @end

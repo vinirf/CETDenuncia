@@ -11,6 +11,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Usuario.h"
+#import "MapaViewController.h"
+#import "TimeLineCETViewController.h"
 
 @interface ViewInicialViewController : UIViewController <UIAlertViewDelegate, CLLocationManagerDelegate>
 

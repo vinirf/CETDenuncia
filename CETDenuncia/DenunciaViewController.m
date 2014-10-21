@@ -28,6 +28,9 @@
     
     //Arredonda background da imagem da foto
     [[self.imgBackTirarFoto layer] setCornerRadius: 10];
+    
+    [[TimeLineCETViewController sharedManager]carregaComponentesIniciaisTwiter];
+    //[[MapaViewController sharedManager]carregaComponentesIniciaisMapa];
 }
 
 
@@ -66,18 +69,11 @@
      ^(NSArray *placemarks, NSError *error) {
          
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
-
-//         NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-//         NSLog(@"addressDictionary %@", placemark.addressDictionary);
-//         NSLog(@"Cidade %@",placemark.locality);
-//         NSLog(@"Rua %@",placemark.name);
-//         NSLog(@"Bairro %@",placemark.subLocality);
-//         NSLog(@"location %@",placemark.location);
          
          //Corta o número da rua
          NSArray *string = [placemark.name componentsSeparatedByString:@","];
-         NSLog(@"Rua %@", string.firstObject);
          
+         //Seta localizacao do Usuario (Cidade,Rua)
          [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",string.firstObject];
          
          
@@ -121,7 +117,7 @@
     
 }
 
-////////////////////////////////////////////////////////////////////////////////////// TIRAR FOTO //////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////TIRA FOTO //////////////////////////////////
 
 
 -(void)tirarFoto{

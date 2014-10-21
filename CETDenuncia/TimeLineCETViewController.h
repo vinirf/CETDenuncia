@@ -10,6 +10,9 @@
 
 @interface TimeLineCETViewController : UIViewController <UIWebViewDelegate>
 
++(TimeLineCETViewController*)sharedManager;
+-(void)carregaComponentesIniciaisTwiter;
+
 @property (weak, nonatomic) IBOutlet UIWebView *TimeLineCETWebView;
 @property (weak, nonatomic) IBOutlet UIImageView *barraSuperior;
 @property (weak, nonatomic) IBOutlet UIButton *outBtoVoltar;

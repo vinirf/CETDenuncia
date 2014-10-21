@@ -13,6 +13,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Usuario.h"
+#import "MapaViewController.h"
+#import "TimeLineCETViewController.h"
 
 @interface DenunciaViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,MKMapViewDelegate>
 

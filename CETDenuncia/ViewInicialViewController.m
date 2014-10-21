@@ -36,8 +36,9 @@
     //Solicita e guarda coordenadas do usuário
     [self pedeLocalizacaoUsuario];
     
+    
     //Guarda o local (rua, cidade .. etc) e chama o tutorial ou tela de denuncia
-    [self performSelector:@selector(chamaTabBarController) withObject:NULL afterDelay:3.0];
+    [self performSelector:@selector(chamaTabBarController) withObject:NULL afterDelay:0.0];
     
 }
 
@@ -95,6 +96,7 @@
             [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
                      
             NSLog(@"f88orm = %@",[Usuario sharedManager].localizacao);
+            
                 
             if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {
                 [self tutorialVisualizado];
@@ -106,7 +108,6 @@
 
         }];
         
-        NSLog(@"f88orm = %@",[Usuario sharedManager].localizacao);
     }
     
 
