@@ -30,7 +30,7 @@
     CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
     fadeAnim.fromValue = [NSNumber numberWithFloat:0.0];
     fadeAnim.toValue = [NSNumber numberWithFloat:1.0];
-    fadeAnim.duration = 3.0;
+    fadeAnim.duration = 2.0;
     [self.view.layer addAnimation:fadeAnim forKey:@"opacity"];
     
     //Solicita e guarda coordenadas do usuário

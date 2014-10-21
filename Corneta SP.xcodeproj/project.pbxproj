@@ -17,11 +17,6 @@
 		0BB77D5519CCA4DA00343AC1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB77D5319CCA4DA00343AC1 /* Main_iPad.storyboard */; };
 		0BB77D5819CCA4DA00343AC1 /* DenunciaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D5719CCA4DA00343AC1 /* DenunciaViewController.m */; };
 		0BB77D5A19CCA4DA00343AC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB77D5919CCA4DA00343AC1 /* Images.xcassets */; };
-		0BB77D6119CCA4DA00343AC1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB77D6019CCA4DA00343AC1 /* XCTest.framework */; };
-		0BB77D6219CCA4DA00343AC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB77D3E19CCA4DA00343AC1 /* Foundation.framework */; };
-		0BB77D6319CCA4DA00343AC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB77D4219CCA4DA00343AC1 /* UIKit.framework */; };
-		0BB77D6B19CCA4DA00343AC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BB77D6919CCA4DA00343AC1 /* InfoPlist.strings */; };
-		0BB77D6D19CCA4DA00343AC1 /* CETDenunciaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D6C19CCA4DA00343AC1 /* CETDenunciaTests.m */; };
 		0BB77D9719CCA98B00343AC1 /* NSDateFormatter+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D7B19CCA98B00343AC1 /* NSDateFormatter+STTwitter.m */; };
 		0BB77D9819CCA98B00343AC1 /* NSError+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D7D19CCA98B00343AC1 /* NSError+STTwitter.m */; };
 		0BB77D9919CCA98B00343AC1 /* NSString+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D7F19CCA98B00343AC1 /* NSString+STTwitter.m */; };
@@ -66,16 +61,6 @@
 		A8F58D8719D48D30008B8E06 /* CoordenadaCetSiteLentidao.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F58D8619D48D30008B8E06 /* CoordenadaCetSiteLentidao.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0BB77D6419CCA4DA00343AC1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0BB77D3319CCA4DA00343AC1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0BB77D3A19CCA4DA00343AC1;
-			remoteInfo = CETDenuncia;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		0BB77D3B19CCA4DA00343AC1 /* Corneta SP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Corneta SP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB77D3E19CCA4DA00343AC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,7 +77,6 @@
 		0BB77D5619CCA4DA00343AC1 /* DenunciaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DenunciaViewController.h; sourceTree = "<group>"; };
 		0BB77D5719CCA4DA00343AC1 /* DenunciaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DenunciaViewController.m; sourceTree = "<group>"; };
 		0BB77D5919CCA4DA00343AC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0BB77D5F19CCA4DA00343AC1 /* CETDenunciaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CETDenunciaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB77D6019CCA4DA00343AC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0BB77D6819CCA4DA00343AC1 /* CETDenunciaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CETDenunciaTests-Info.plist"; sourceTree = "<group>"; };
 		0BB77D6A19CCA4DA00343AC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -183,16 +167,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0BB77D5C19CCA4DA00343AC1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0BB77D6119CCA4DA00343AC1 /* XCTest.framework in Frameworks */,
-				0BB77D6319CCA4DA00343AC1 /* UIKit.framework in Frameworks */,
-				0BB77D6219CCA4DA00343AC1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -214,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				0BB77D3B19CCA4DA00343AC1 /* Corneta SP.app */,
-				0BB77D5F19CCA4DA00343AC1 /* CETDenunciaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -464,24 +437,6 @@
 			productReference = 0BB77D3B19CCA4DA00343AC1 /* Corneta SP.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0BB77D5E19CCA4DA00343AC1 /* CETDenunciaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0BB77D7319CCA4DA00343AC1 /* Build configuration list for PBXNativeTarget "CETDenunciaTests" */;
-			buildPhases = (
-				0BB77D5B19CCA4DA00343AC1 /* Sources */,
-				0BB77D5C19CCA4DA00343AC1 /* Frameworks */,
-				0BB77D5D19CCA4DA00343AC1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0BB77D6519CCA4DA00343AC1 /* PBXTargetDependency */,
-			);
-			name = CETDenunciaTests;
-			productName = CETDenunciaTests;
-			productReference = 0BB77D5F19CCA4DA00343AC1 /* CETDenunciaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -492,10 +447,7 @@
 				ORGANIZATIONNAME = "Vinicius Resende | Emerson Barros";
 				TargetAttributes = {
 					0BB77D3A19CCA4DA00343AC1 = {
-						DevelopmentTeam = SEUF597V3Z;
-					};
-					0BB77D5E19CCA4DA00343AC1 = {
-						TestTargetID = 0BB77D3A19CCA4DA00343AC1;
+						DevelopmentTeam = U6NZ972TGR;
 					};
 				};
 			};
@@ -513,7 +465,6 @@
 			projectRoot = "";
 			targets = (
 				0BB77D3A19CCA4DA00343AC1 /* Corneta SP */,
-				0BB77D5E19CCA4DA00343AC1 /* CETDenunciaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -540,14 +491,6 @@
 				A82ED8AC19F1BCBB00D26EEF /* pino@2x.png in Resources */,
 				A82ED8A519F1B90C00D26EEF /* tabIconeMapa@2x.png in Resources */,
 				A82ED89B19F1B57B00D26EEF /* botaoDenunciar@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0BB77D5D19CCA4DA00343AC1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0BB77D6B19CCA4DA00343AC1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,23 +531,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0BB77D5B19CCA4DA00343AC1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0BB77D6D19CCA4DA00343AC1 /* CETDenunciaTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0BB77D6519CCA4DA00343AC1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0BB77D3A19CCA4DA00343AC1 /* Corneta SP */;
-			targetProxy = 0BB77D6419CCA4DA00343AC1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0BB77D4719CCA4DA00343AC1 /* InfoPlist.strings */ = {
@@ -748,46 +675,6 @@
 			};
 			name = Release;
 		};
-		0BB77D7419CCA4DA00343AC1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CETDenuncia.app/CETDenuncia";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CETDenuncia/CETDenuncia-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "CETDenunciaTests/CETDenunciaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		0BB77D7519CCA4DA00343AC1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CETDenuncia.app/CETDenuncia";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CETDenuncia/CETDenuncia-Prefix.pch";
-				INFOPLIST_FILE = "CETDenunciaTests/CETDenunciaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -805,15 +692,6 @@
 			buildConfigurations = (
 				0BB77D7119CCA4DA00343AC1 /* Debug */,
 				0BB77D7219CCA4DA00343AC1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0BB77D7319CCA4DA00343AC1 /* Build configuration list for PBXNativeTarget "CETDenunciaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0BB77D7419CCA4DA00343AC1 /* Debug */,
-				0BB77D7519CCA4DA00343AC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

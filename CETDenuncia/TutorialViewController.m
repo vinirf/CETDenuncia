@@ -50,6 +50,7 @@
 
 
 -(PageContentViewController *)viewControllerAtIndex:(NSUInteger)index{
+    
     if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
         return nil;
     }
@@ -60,12 +61,6 @@
     pageContentViewController.imageFile = self.pageImages[index];
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
-    
-    //Quando estiver na 3a página mostra o botão
-    if(index == 2)
-        self.botaoComecar.hidden = NO;
-    else
-        self.botaoComecar.hidden = YES;
     
 
     return pageContentViewController;
@@ -83,6 +78,10 @@
     
     index--;
     
+    if(index == 2)
+        self.botaoComecar.hidden = NO;
+    else
+        self.botaoComecar.hidden = YES;
 
     
     return [self viewControllerAtIndex: index];
@@ -90,6 +89,13 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
     NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    
+    
+    //Quando estiver na 3a página mostra o botão
+    if(index == 2)
+        self.botaoComecar.hidden = NO;
+    else
+        self.botaoComecar.hidden = YES;
     
     if (index == NSNotFound) {
         return nil;
