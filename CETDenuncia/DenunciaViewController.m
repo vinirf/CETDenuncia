@@ -36,9 +36,8 @@
     self.viewInformativo.layer.shadowRadius = 3.0f;
     self.viewInformativo.layer.shadowOpacity = 1.0f;
     
-    [[TimeLineCETViewController sharedManager]carregaComponentesIniciaisTwiter];
-    //[[MapaViewController sharedManager]carregaComponentesIniciaisMapa];
 }
+
 
 
 - (void)didReceiveMemoryWarning{

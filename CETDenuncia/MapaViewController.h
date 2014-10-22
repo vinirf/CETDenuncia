@@ -14,7 +14,7 @@
 
 @interface MapaViewController : UIViewController <MKMapViewDelegate>
 
-+(MapaViewController*)sharedManager;
+
 -(void)carregaComponentesIniciaisMapa;
 
 //VIEW

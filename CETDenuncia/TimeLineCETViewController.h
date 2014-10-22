@@ -10,7 +10,7 @@
 
 @interface TimeLineCETViewController : UIViewController <UIWebViewDelegate>
 
-+(TimeLineCETViewController*)sharedManager;
+
 -(void)carregaComponentesIniciaisTwiter;
 
 @property (weak, nonatomic) IBOutlet UIWebView *TimeLineCETWebView;
@@ -19,5 +19,10 @@
 
 //BLOCK DE LINKS EXTERNOS
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *iconeCarregamento;
+@property (weak, nonatomic) IBOutlet UIView *viewCarregamento;
+
+@property BOOL pararRepeticaoProtocolo;
 
 @end

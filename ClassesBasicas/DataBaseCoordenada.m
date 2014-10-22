@@ -25,6 +25,7 @@
         self.listaCoordenadasOcorrencia = [[NSMutableArray alloc]init];
         self.listaCoordenadasLentidao = [[NSMutableArray alloc] init];
         self.listaCoordenadasLatLong= [[NSMutableArray alloc]init];
+        self.listaAnotation = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -54,7 +55,6 @@
     [geocoder geocodeAddressString:s completionHandler:^(NSArray* placemarks, NSError* error){
         for (CLPlacemark  *aPlacemark in placemarks) {
             
-            
             CLLocationCoordinate2D localizacao;
             ponto.title = @"Ocorrência";
             ponto.subtitle = [CoordCet titulo];
@@ -71,6 +71,8 @@
             [[[DataBaseCoordenada sharedManager] listaCoordenadasLatLong]addObject:cordll];
             
             ponto.coordinate = localizacao;
+            
+            [self.listaAnotation addObject:ponto];
         }
     }];
     

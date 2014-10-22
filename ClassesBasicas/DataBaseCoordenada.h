@@ -19,6 +19,8 @@
 @property NSMutableArray *listaCoordenadasLentidao;
 @property NSMutableArray *listaCoordenadasLatLong;
 
+@property NSMutableArray *listaAnotation;
+
 //Singleton
 +(DataBaseCoordenada*)sharedManager;
 

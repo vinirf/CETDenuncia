@@ -12,25 +12,6 @@
 
 @implementation MapaViewController
 
-+(MapaViewController*)sharedManager{
-    static MapaViewController *unicoUsuario = nil;
-    if(!unicoUsuario){
-        unicoUsuario = [[super allocWithZone:nil]init];
-    }
-    return unicoUsuario;
-}
-
--(id)init{
-    self = [super init];
-    if(self){}
-    return self;
-}
-
-+(id)allocWithZone:(struct _NSZone *)zone{
-    return [self sharedManager];
-}
-
-
 
 //VIEW ------------------------------------------------------------------------------
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
@@ -40,20 +21,20 @@
 }
 
 -(void)carregaComponentesIniciaisMapa{
+    
     //Configura a localização atual como a localização do usuário
-    self.mapa.showsUserLocation = YES;
     [self.mapa setDelegate: self];
+    self.mapa.showsUserLocation = YES;
     [self viewWillLayoutSubviews];
     
-    //Parse do HTML
-    [self serializaDadosSiteCET];
+ 
 }
 
 - (void)viewDidLoad{
     
     [super viewDidLoad];
     
-    //[self carregaComponentesIniciaisMapa];
+    [self carregaComponentesIniciaisMapa];
     
 }
 
@@ -61,12 +42,28 @@
     [super viewDidAppear: animated];
     
     [self zoomToUserRegion];
-    [self viewWillLayoutSubviews];
-    [self serializaDadosSiteCET];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(atualizaPinos:) userInfo:nil repeats:NO];
+    
 }
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
+}
+
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+
+    [self.mapa removeAnnotations:[DataBaseCoordenada sharedManager].listaAnotation];
+    
+    [[DataBaseCoordenada sharedManager].listaAnotation removeAllObjects];
+    
+}
+
+-(void)atualizaPinos:(NSTimer*)timer{
+    [self serializaDadosSiteCET];
+    [timer invalidate];
 }
 
 //----------------------------------------------------------------------------------
@@ -77,6 +74,7 @@
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     
     [[self mapa] setCenterCoordinate: userLocation.location.coordinate];
+    
 }
 
 
@@ -162,7 +160,7 @@
             CoordenadaCetSite *coord = [[[DataBaseCoordenada sharedManager]listaCoordenadasOcorrencia ]objectAtIndex:i];
             if([coord isKindOfClass:[CoordenadaCetSite class]]){
                 if(([[coord hora] isEqualToString:[t hora]]) && ([[coord data] isEqualToString:[t data]])){
-                    estadoParaAdicionar = false;
+                    //estadoParaAdicionar = false;
                     break;
                 }
             }
@@ -171,6 +169,7 @@
         if(estadoParaAdicionar){
             [[DataBaseCoordenada sharedManager]criaCoordenadaSiteCETOcorrencia: t];
             [self marcarPosicaoNoMapaDiretoSiteCetOcorrencia: t];
+            NSLog(@"oi00000");
         }else{
         }
         
@@ -179,6 +178,7 @@
        
     }
     continua = [stringFinal rangeOfString:@"<tr class"];
+    
     
 }
 
