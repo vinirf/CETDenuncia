@@ -43,7 +43,7 @@
     
     [self zoomToUserRegion];
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(atualizaPinos:) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(atualizaPinos:) userInfo:nil repeats:NO];
     
 }
 
@@ -107,6 +107,8 @@
         NSString *s = [NSString stringWithFormat:@"%@%d%@",@"http://cetsp1.cetsp.com.br/monitransmapa/IMG",contando,@"/ocorrenciasH.asp?ordem=N "];
         NSURL* query = [NSURL URLWithString:s];
         result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
+        
+        
     }
     
     
@@ -169,7 +171,7 @@
         if(estadoParaAdicionar){
             [[DataBaseCoordenada sharedManager]criaCoordenadaSiteCETOcorrencia: t];
             [self marcarPosicaoNoMapaDiretoSiteCetOcorrencia: t];
-            NSLog(@"oi00000");
+
         }else{
         }
         

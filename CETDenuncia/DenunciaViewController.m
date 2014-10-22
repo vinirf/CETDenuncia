@@ -162,7 +162,6 @@
     if (self.viewInformativo.hidden) {
         self.viewInformativo.hidden = NO;
         
-        [[UITabBar appearance] setAlpha: 0.3];
         self.imageView.alpha = 0.3;
         self.imgBackground.alpha = 0.3;
         self.imgBackTirarFoto.alpha = 0.3;
@@ -170,7 +169,6 @@
     }else{
         self.viewInformativo.hidden = YES;
         
-        [[UITabBar appearance] setAlpha: 1];
         self.imageView.alpha = 1;
         self.imgBackground.alpha = 1;
         self.imgBackTirarFoto.alpha = 1;
