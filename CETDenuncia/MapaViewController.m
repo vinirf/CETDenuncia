@@ -95,19 +95,25 @@
 -(void)serializaDadosSiteCET{
     
     
-    NSString *problema = @"Ocorrências não disponíveis no momento";
+    NSString *problema = @"<h3>Ocorrências não";
     NSString* url = @"http://cetsp1.cetsp.com.br/monitransmapa/IMG5/ocorrenciasH.asp?ordem=H";
     NSURL* query = [NSURL URLWithString:url];
     NSString* result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
     
+    
     int contando =0;
-    while([result rangeOfString:problema].location != NSNotFound){
+    while([result rangeOfString:problema].location != NSNotFound && contando <= 30){
         contando += 1;
         
-        NSString *s = [NSString stringWithFormat:@"%@%d%@",@"http://cetsp1.cetsp.com.br/monitransmapa/IMG",contando,@"/ocorrenciasH.asp?ordem=N "];
+        NSString *s = [NSString stringWithFormat:@"%@%d%@",@"http://cetsp1.cetsp.com.br/monitransmapa/IMG",contando,@"/ocorrenciasH.asp?ordem=N"];
         NSURL* query = [NSURL URLWithString:s];
         result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
+
+        NSLog(@"contador = %d",contando);
         
+        if(contando == 30){
+            return;
+        }
         
     }
     
