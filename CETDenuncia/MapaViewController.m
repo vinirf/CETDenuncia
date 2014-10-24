@@ -43,7 +43,11 @@
     
     [self zoomToUserRegion];
     
-    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(atualizaPinos:) userInfo:nil repeats:NO];
+    
+    self.viewCarregamento.hidden = NO;
+    [self addAnimacao];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(atualizaPinos:) userInfo:nil repeats:NO];
     
 }
 
@@ -58,6 +62,23 @@
     [self.mapa removeAnnotations:[DataBaseCoordenada sharedManager].listaAnotation];
     
     [[DataBaseCoordenada sharedManager].listaAnotation removeAllObjects];
+    
+}
+
+-(void)addAnimacao{
+    
+    CABasicAnimation *movePino = [CABasicAnimation animationWithKeyPath:@"position"];
+    movePino.duration = 1.0;
+    movePino.repeatCount = INFINITY;
+    movePino.fromValue = [NSValue valueWithCGPoint: CGPointMake(self.imgPinoCarregamento.frame.origin.x,self.imgPinoCarregamento.frame.origin.y)];
+    movePino.toValue = [NSValue valueWithCGPoint: CGPointMake(self.imgPinoCarregamento.frame.origin.x,self.imgPinoCarregamento.frame.origin.y + 50)];
+    
+    [self.imgPinoCarregamento.layer addAnimation:movePino forKey:@"animacaoMovimento"];
+}
+
+-(void)removeAnimacao{
+    
+    [self.imgPinoCarregamento.layer removeAnimationForKey:@"animacaoMovimento"];
     
 }
 
@@ -109,7 +130,7 @@
         NSURL* query = [NSURL URLWithString:s];
         result = [NSString stringWithContentsOfURL:query encoding:NSWindowsCP1254StringEncoding error:nil];
 
-        NSLog(@"contador = %d",contando);
+        
         
         if(contando == 30){
             return;
@@ -186,6 +207,9 @@
        
     }
     continua = [stringFinal rangeOfString:@"<tr class"];
+    
+    [self removeAnimacao];
+    self.viewCarregamento.hidden = YES;
     
     
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HjO-tm-g6m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HjO-tm-g6m">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Denuncia View Controller-->
@@ -195,11 +195,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J4E-Cv-a8O">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                                <rect key="frame" x="-4" y="-1" width="328" height="520"/>
                                 <connections>
                                     <outlet property="delegate" destination="Cff-vX-bHn" id="ZGf-v3-hjJ"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KgL-fL-Nca">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pino.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iha-Vk-m17">
+                                        <rect key="frame" x="166" y="182" width="140" height="156"/>
+                                    </imageView>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -207,12 +215,14 @@
                     <navigationItem key="navigationItem" id="gL6-zE-yjn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="imgPinoCarregamento" destination="Iha-Vk-m17" id="3ya-6R-FpU"/>
                         <outlet property="mapa" destination="J4E-Cv-a8O" id="JSz-Li-UA4"/>
+                        <outlet property="viewCarregamento" destination="KgL-fL-Nca" id="8f0-mi-ZYK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPb-nM-9wU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="814"/>
+            <point key="canvasLocation" x="801" y="833"/>
         </scene>
         <!--Time LineCET View Controller-->
         <scene sceneID="0To-64-HjF">
@@ -341,6 +351,7 @@
         <image name="btoVoltar@2x" width="128" height="128"/>
         <image name="logoTelaInicial@2x.png" width="320" height="568"/>
         <image name="navigationBar@2x.png" width="320" height="568"/>
+        <image name="pino.png" width="31" height="36"/>
         <image name="tabIconeDenuncia@2x.png" width="320" height="568"/>
         <image name="tabIconeMapa@2x.png" width="320" height="568"/>
         <image name="tabIconeOlhoVivo@2x.png" width="320" height="568"/>
