@@ -27,8 +27,8 @@
     [[self.botaoComecar layer] setCornerRadius: 10];
     
     //Títulos e imagens
-    self.pageTitles = @[@"Fotografe e denuncie uma irregularidade diretamente para a CET no Twitter.", @"Acompanhe em tempo real o Twitter da CET.", @"Com o mapa, fique ligado nas ocorrências próximas à você."];
-    self.pageImages = @[@"Tela-Denuncia.png", @"Tela-OlhoVivo.png", @"Tela-Localizacao.png"];
+    self.pageTitles = @[@"Fotografe e denuncie uma irregularidade diretamente para a CET no Twitter.", @"No tweet sua localização é incorporada automaticamente, e você pode enviar uma imagem da ocorrência.", @"Acompanhe em tempo real o Twitter da CET.", @"Com o mapa, fique ligado nas ocorrências próximas à você."];
+    self.pageImages = @[@"Tela-Denuncia.png", @"Tela-Tweetando.png", @"Tela-OlhoVivo.png", @"Tela-Localizacao.png"];
     
     //Cria o ViewController associado ao story board
     self.tutorialViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"PageViewController"];
@@ -81,7 +81,7 @@
     
     index--;
     
-    if(index == 2)
+    if(index == 3)
         self.botaoComecar.hidden = NO;
     else
         self.botaoComecar.hidden = YES;
@@ -95,7 +95,7 @@
     
     
     //Quando estiver na 3a página mostra o botão
-    if(index == 2)
+    if(index == 3)
         self.botaoComecar.hidden = NO;
     else
         self.botaoComecar.hidden = YES;

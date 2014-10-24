@@ -58,9 +58,9 @@
     self.locationManager.delegate = self;
     
     //Se for uma versão igual o maior do iOS8 requer autorização especial
-    if(IS_IOS8_OR_LATER) {
-       [self.locationManager requestAlwaysAuthorization];
-    }
+//    if(IS_IOS8_OR_LATER) {
+//       [self.locationManager requestAlwaysAuthorization];
+//    }
     
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;

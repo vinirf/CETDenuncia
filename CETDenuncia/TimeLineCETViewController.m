@@ -71,7 +71,6 @@
     }else{
         self.outBtoVoltar.hidden = YES;
     }
-
     
     return !(navigationType == UIWebViewNavigationTypeLinkClicked);
 }

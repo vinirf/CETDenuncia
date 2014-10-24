@@ -58,8 +58,9 @@
 		A893115919F6DE3600D61A12 /* Tela-Localizacao.png in Resources */ = {isa = PBXBuildFile; fileRef = A893115619F6DE3600D61A12 /* Tela-Localizacao.png */; };
 		A893115A19F6DE3600D61A12 /* Tela-OlhoVivo.png in Resources */ = {isa = PBXBuildFile; fileRef = A893115719F6DE3600D61A12 /* Tela-OlhoVivo.png */; };
 		A893116019F6EF6300D61A12 /* btoVoltar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A893115F19F6EF6300D61A12 /* btoVoltar@2x.png */; };
-		A89FDCCC19F83CF3005D573B /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A89FDCCB19F83CF3005D573B /* default.gpx */; };
 		A8A5DD4619F6D30E006C94F4 /* pino@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A5DD4519F6D30E006C94F4 /* pino@2x.png */; };
+		A8B37FC019FAC57B0009A24D /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A8B37FBF19FAC57B0009A24D /* default.gpx */; };
+		A8B37FC219FACB920009A24D /* Tela-Tweetando.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B37FC119FACB920009A24D /* Tela-Tweetando.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,9 +149,9 @@
 		A893115619F6DE3600D61A12 /* Tela-Localizacao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-Localizacao.png"; sourceTree = "<group>"; };
 		A893115719F6DE3600D61A12 /* Tela-OlhoVivo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-OlhoVivo.png"; sourceTree = "<group>"; };
 		A893115F19F6EF6300D61A12 /* btoVoltar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btoVoltar@2x.png"; sourceTree = "<group>"; };
-		A89FDCC919F83CDC005D573B /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
-		A89FDCCB19F83CF3005D573B /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
 		A8A5DD4519F6D30E006C94F4 /* pino@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pino@2x.png"; sourceTree = "<group>"; };
+		A8B37FBF19FAC57B0009A24D /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
+		A8B37FC119FACB920009A24D /* Tela-Tweetando.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-Tweetando.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,8 +176,7 @@
 		0BB77D3219CCA4DA00343AC1 = {
 			isa = PBXGroup;
 			children = (
-				A89FDCCB19F83CF3005D573B /* default.gpx */,
-				A89FDCC919F83CDC005D573B /* default.gpx */,
+				A8B37FBF19FAC57B0009A24D /* default.gpx */,
 				0BB77D7619CCA7A200343AC1 /* Imagens */,
 				A835E3C119F58E16001EA9D8 /* Wifi */,
 				0BB77D7919CCA98B00343AC1 /* STTwitters */,
@@ -384,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				A893115519F6DE3600D61A12 /* Tela-Denuncia.png */,
+				A8B37FC119FACB920009A24D /* Tela-Tweetando.png */,
 				A893115619F6DE3600D61A12 /* Tela-Localizacao.png */,
 				A893115719F6DE3600D61A12 /* Tela-OlhoVivo.png */,
 			);
@@ -486,8 +487,9 @@
 				A893116019F6EF6300D61A12 /* btoVoltar@2x.png in Resources */,
 				A82ED8AA19F1BB7E00D26EEF /* wifi@2x.png in Resources */,
 				0BB77D5219CCA4DA00343AC1 /* Main_iPhone.storyboard in Resources */,
-				A89FDCCC19F83CF3005D573B /* default.gpx in Resources */,
 				0BB77D4919CCA4DA00343AC1 /* InfoPlist.strings in Resources */,
+				A8B37FC019FAC57B0009A24D /* default.gpx in Resources */,
+				A8B37FC219FACB920009A24D /* Tela-Tweetando.png in Resources */,
 				A82ED8A619F1B90C00D26EEF /* tabIconeOlhoVivo@2x.png in Resources */,
 				A82ED8A019F1B82C00D26EEF /* botaoFoto@2x.png in Resources */,
 				A82ED89A19F1B57B00D26EEF /* background.png in Resources */,
