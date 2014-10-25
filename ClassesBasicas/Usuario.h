@@ -18,4 +18,5 @@
 +(Usuario*)sharedManager;
 -(void)setaPosicaoUsuario:(CLLocationCoordinate2D)posUsuario;
 
+
 @end

@@ -26,7 +26,16 @@
         self.listaCoordenadasLentidao = [[NSMutableArray alloc] init];
         self.listaCoordenadasLatLong= [[NSMutableArray alloc]init];
         self.listaAnotation = [[NSMutableArray alloc]init];
+        
+        self.pontoPadrao = [[MKPointAnnotation alloc] init];
+        CLLocationCoordinate2D localizacao;
+        localizacao.latitude = -23.620177;
+        localizacao.longitude = -46.693946;
+        self.pontoPadrao.coordinate = localizacao;
+        
+        
     }
+    
     return self;
 }
 
@@ -73,6 +82,7 @@
             ponto.coordinate = localizacao;
             
             [self.listaAnotation addObject:ponto];
+            
         }
     }];
     

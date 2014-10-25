@@ -106,6 +106,9 @@
              NSString *endereco = [NSString stringWithFormat:@"%@%@%@%@",self.nomeTwitter,@" ",[Usuario sharedManager].localizacao,@", "];
              [tweetSheet setInitialText: endereco];
              
+             NSLog(@"texto = %@",endereco);
+             NSLog(@"usuario = %@",[Usuario sharedManager].localizacao);
+             
              [self presentViewController: tweetSheet animated:YES completion:nil];
              
          }

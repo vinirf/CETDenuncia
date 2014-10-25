@@ -90,7 +90,7 @@
             CLPlacemark *placemark = [placemarks objectAtIndex:0];
             [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
                      
-            NSLog(@"f88orm = %@",[Usuario sharedManager].localizacao);
+            NSLog(@"view inicial = %@",[Usuario sharedManager].localizacao);
             
                 
             if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {

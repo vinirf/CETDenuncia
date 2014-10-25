@@ -15,6 +15,8 @@
 
 @interface DataBaseCoordenada : NSObject
 
+@property MKPointAnnotation *pontoPadrao;
+
 @property NSMutableArray *listaCoordenadasOcorrencia;
 @property NSMutableArray *listaCoordenadasLentidao;
 @property NSMutableArray *listaCoordenadasLatLong;

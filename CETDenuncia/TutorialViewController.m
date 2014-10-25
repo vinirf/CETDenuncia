@@ -20,8 +20,47 @@
     return self;
 }
 
+-(void)localizar{
+    
+    //Localização
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    //Se for uma versão igual o maior do iOS8 requer autorização especial
+    //    if(IS_IOS8_OR_LATER) {
+    //       [self.locationManager requestAlwaysAuthorization];
+    //    }
+    
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+    
+    [[Usuario sharedManager]setaPosicaoUsuario: self.locationManager.location.coordinate];
+    
+    
+    CLGeocoder *ceo = [[CLGeocoder alloc]init];
+    CLLocationCoordinate2D coord = [[Usuario sharedManager]locUsuario];
+    CLLocation *loc = [[CLLocation alloc]initWithLatitude:coord.latitude  longitude:coord.longitude] ;
+    
+    [ceo reverseGeocodeLocation: loc completionHandler:
+     ^(NSArray *placemarks, NSError *error) {
+         
+         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+         [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
+         
+         NSLog(@"view tuto = %@",[Usuario sharedManager].localizacao);
+
+         
+     }];
+
+    
+}
+
+
+
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
     
     //Arredonda background da imagem da foto
     [[self.botaoComecar layer] setCornerRadius: 10];
@@ -95,10 +134,12 @@
     
     
     //Quando estiver na 3a página mostra o botão
-    if(index == 3)
+    if(index == 3){
+        [self localizar];
         self.botaoComecar.hidden = NO;
-    else
+    }else{
         self.botaoComecar.hidden = YES;
+    }
     
     if (index == NSNotFound) {
         return nil;

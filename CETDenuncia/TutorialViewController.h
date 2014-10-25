@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "PageContentViewController.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "Usuario.h"
 
-@interface TutorialViewController : UIViewController <UIPageViewControllerDataSource>
+@interface TutorialViewController : UIViewController <UIPageViewControllerDataSource,CLLocationManagerDelegate>
 
 @property UIPageViewController *tutorialViewController;
 @property NSArray *pageTitles;
 @property NSArray *pageImages;
+
+@property CLLocationManager *locationManager;
 
 @property (weak, nonatomic) IBOutlet UIButton *botaoComecar;
 

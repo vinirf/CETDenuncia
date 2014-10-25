@@ -34,20 +34,27 @@
     
     [super viewDidLoad];
     
-    [self carregaComponentesIniciaisMapa];
     
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    
     [super viewDidAppear: animated];
     
-    [self zoomToUserRegion];
+    [self carregaComponentesIniciaisMapa];
+    
+    
+    if ([[Usuario sharedManager].localizacao  rangeOfString: @"Oceano Atlântico Sul"].location !=  NSNotFound){
+        [self zoomToPinoRegionPadrao];
+    }else{
+        [self zoomToUserRegion];
+    }
     
     
     self.viewCarregamento.hidden = NO;
     [self addAnimacao];
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(atualizaPinos:) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(atualizaPinos:) userInfo:nil repeats:NO];
     
 }
 
@@ -62,6 +69,32 @@
     [self.mapa removeAnnotations:[DataBaseCoordenada sharedManager].listaAnotation];
     
     [[DataBaseCoordenada sharedManager].listaAnotation removeAllObjects];
+    
+}
+
+-(void)zoomToPinoRegionPadrao{
+    
+    MKPointAnnotation *ponto = [DataBaseCoordenada sharedManager].pontoPadrao;
+    
+    MKCoordinateRegion region;
+    region.center.latitude = ponto.coordinate.latitude;
+    region.center.longitude = ponto.coordinate.longitude;
+    region.span.latitudeDelta = 0.1;
+    region.span.longitudeDelta = 0.1;
+    [self.mapa setRegion:region];
+    
+    
+}
+
+//Aplica zoom ao mapa na região em que o usuário se encontra
+-(void)zoomToUserRegion{
+    
+    MKCoordinateRegion region;
+    region.center.latitude = self.mapa.userLocation.coordinate.latitude;
+    region.center.longitude = self.mapa.userLocation.coordinate.longitude;
+    region.span.latitudeDelta = 0.1;
+    region.span.longitudeDelta = 0.1;
+    [self.mapa setRegion:region];
     
 }
 
@@ -98,18 +131,6 @@
     
 }
 
-
-//Aplica zoom ao mapa na região em que o usuário se encontra
--(void)zoomToUserRegion{
-    
-    MKCoordinateRegion region;
-    region.center.latitude = self.mapa.userLocation.coordinate.latitude;
-    region.center.longitude = self.mapa.userLocation.coordinate.longitude;
-    region.span.latitudeDelta = 0.1;
-    region.span.longitudeDelta = 0.1;
-    [self.mapa setRegion:region];
-    
-}
 //---------------------------------------------------------------------------------
 
 
@@ -209,8 +230,8 @@
     continua = [stringFinal rangeOfString:@"<tr class"];
     
     [self removeAnimacao];
+   
     self.viewCarregamento.hidden = YES;
-    
     
 }
 
