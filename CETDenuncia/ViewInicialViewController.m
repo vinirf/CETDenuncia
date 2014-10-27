@@ -56,15 +56,16 @@
     //Localização
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
     
     //Se for uma versão igual o maior do iOS8 requer autorização especial
-//    if(IS_IOS8_OR_LATER) {
-//       [self.locationManager requestAlwaysAuthorization];
-//    }
-    
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
     [self.locationManager startUpdatingLocation];
+    
+//    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [[Usuario sharedManager]setaPosicaoUsuario: self.locationManager.location.coordinate];
 }
