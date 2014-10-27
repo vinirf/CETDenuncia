@@ -23,6 +23,8 @@
 @property MKMapView *mapa;
 @property CLLocationManager *locationManager;
 @property UITapGestureRecognizer *tapAddFoto;
+@property UITapGestureRecognizer *tapVoltarView;
+
 
 //VIEWS
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;

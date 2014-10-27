@@ -19,12 +19,20 @@
     //Conta CET
     self.nomeTwitter = @"@CETSP_";
     
+    
+    //Gesture para voltar a view ao estado normal quando o informativo estiver em destaque
+    self.tapVoltarView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(voltarViewEstadoOriginal)];
+    self.tapVoltarView.numberOfTouchesRequired = 1;
+    self.tapVoltarView.enabled = YES;
+    [self.view addGestureRecognizer: self.tapVoltarView];
+    
     //Gesture para adicionar foto no tweet
     self.tapAddFoto = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tirarFoto)];
-    self.tapAddFoto .numberOfTouchesRequired = 1;
-    self.tapAddFoto .enabled = YES;
+    self.tapAddFoto.numberOfTouchesRequired = 1;
+    self.tapAddFoto.enabled = YES;
     self.imageView.userInteractionEnabled = YES;
     [self.imageView addGestureRecognizer: self.tapAddFoto];
+    
     
     //Arredonda bordas
     [[self.viewInformativo layer] setCornerRadius: 10];
@@ -160,7 +168,10 @@
 
 
 - (IBAction)btoInformativo:(id)sender {
-    
+    [self mostrarInformativo];
+}
+
+-(void)mostrarInformativo{
     
     if (self.viewInformativo.hidden) {
         self.viewInformativo.hidden = NO;
@@ -170,14 +181,20 @@
         self.imgBackTirarFoto.alpha = 0.3;
         self.outBtoDenunciar.alpha = 0.3;
     }else{
+        [self voltarViewEstadoOriginal];
+    }
+}
+
+-(void)voltarViewEstadoOriginal{
+    
+    if(!self.viewInformativo.hidden){
         self.viewInformativo.hidden = YES;
-        
+    
         self.imageView.alpha = 1;
         self.imgBackground.alpha = 1;
-        self.imgBackTirarFoto.alpha = 1;
+        self.imgBackTirarFoto.alpha = 0.4;
         self.outBtoDenunciar.alpha = 1;
     }
-    
 }
 
 @end

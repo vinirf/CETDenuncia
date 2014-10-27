@@ -14,7 +14,6 @@
 		0BB77D4B19CCA4DA00343AC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D4A19CCA4DA00343AC1 /* main.m */; };
 		0BB77D4F19CCA4DA00343AC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D4E19CCA4DA00343AC1 /* AppDelegate.m */; };
 		0BB77D5219CCA4DA00343AC1 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB77D5019CCA4DA00343AC1 /* Main_iPhone.storyboard */; };
-		0BB77D5519CCA4DA00343AC1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB77D5319CCA4DA00343AC1 /* Main_iPad.storyboard */; };
 		0BB77D5819CCA4DA00343AC1 /* DenunciaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D5719CCA4DA00343AC1 /* DenunciaViewController.m */; };
 		0BB77D5A19CCA4DA00343AC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB77D5919CCA4DA00343AC1 /* Images.xcassets */; };
 		0BB77D9719CCA98B00343AC1 /* NSDateFormatter+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB77D7B19CCA98B00343AC1 /* NSDateFormatter+STTwitter.m */; };
@@ -76,7 +75,6 @@
 		0BB77D4D19CCA4DA00343AC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BB77D4E19CCA4DA00343AC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0BB77D5119CCA4DA00343AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		0BB77D5419CCA4DA00343AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		0BB77D5619CCA4DA00343AC1 /* DenunciaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DenunciaViewController.h; sourceTree = "<group>"; };
 		0BB77D5719CCA4DA00343AC1 /* DenunciaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DenunciaViewController.m; sourceTree = "<group>"; };
 		0BB77D5919CCA4DA00343AC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 				0BB77D4D19CCA4DA00343AC1 /* AppDelegate.h */,
 				0BB77D4E19CCA4DA00343AC1 /* AppDelegate.m */,
 				0BB77D5019CCA4DA00343AC1 /* Main_iPhone.storyboard */,
-				0BB77D5319CCA4DA00343AC1 /* Main_iPad.storyboard */,
 				0BB77D5919CCA4DA00343AC1 /* Images.xcassets */,
 				0BB77D4519CCA4DA00343AC1 /* Supporting Files */,
 			);
@@ -482,7 +479,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A893115A19F6DE3600D61A12 /* Tela-OlhoVivo.png in Resources */,
-				0BB77D5519CCA4DA00343AC1 /* Main_iPad.storyboard in Resources */,
 				A893115819F6DE3600D61A12 /* Tela-Denuncia.png in Resources */,
 				0BB77D5A19CCA4DA00343AC1 /* Images.xcassets in Resources */,
 				A82ED89E19F1B7B900D26EEF /* logoTelaInicial@2x.png in Resources */,
@@ -558,14 +554,6 @@
 				0BB77D5119CCA4DA00343AC1 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		0BB77D5319CCA4DA00343AC1 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0BB77D5419CCA4DA00343AC1 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		0BB77D6919CCA4DA00343AC1 /* InfoPlist.strings */ = {
@@ -661,9 +649,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CETDenuncia/CETDenuncia-Prefix.pch";
 				INFOPLIST_FILE = "CETDenuncia/CETDenuncia-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "Corneta SP";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -678,9 +667,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CETDenuncia/CETDenuncia-Prefix.pch";
 				INFOPLIST_FILE = "CETDenuncia/CETDenuncia-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "Corneta SP";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
