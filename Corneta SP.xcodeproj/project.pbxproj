@@ -59,6 +59,7 @@
 		A893115A19F6DE3600D61A12 /* Tela-OlhoVivo.png in Resources */ = {isa = PBXBuildFile; fileRef = A893115719F6DE3600D61A12 /* Tela-OlhoVivo.png */; };
 		A893116019F6EF6300D61A12 /* btoVoltar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A893115F19F6EF6300D61A12 /* btoVoltar@2x.png */; };
 		A8A5DD4619F6D30E006C94F4 /* pino@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A5DD4519F6D30E006C94F4 /* pino@2x.png */; };
+		A8A8E86A19FEB17E00E48B4D /* pinoCarregamento@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A8E86919FEB17E00E48B4D /* pinoCarregamento@2x.png */; };
 		A8B37FC019FAC57B0009A24D /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A8B37FBF19FAC57B0009A24D /* default.gpx */; };
 		A8B37FC219FACB920009A24D /* Tela-Tweetando.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B37FC119FACB920009A24D /* Tela-Tweetando.png */; };
 /* End PBXBuildFile section */
@@ -150,6 +151,7 @@
 		A893115719F6DE3600D61A12 /* Tela-OlhoVivo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-OlhoVivo.png"; sourceTree = "<group>"; };
 		A893115F19F6EF6300D61A12 /* btoVoltar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btoVoltar@2x.png"; sourceTree = "<group>"; };
 		A8A5DD4519F6D30E006C94F4 /* pino@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pino@2x.png"; sourceTree = "<group>"; };
+		A8A8E86919FEB17E00E48B4D /* pinoCarregamento@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinoCarregamento@2x.png"; sourceTree = "<group>"; };
 		A8B37FBF19FAC57B0009A24D /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
 		A8B37FC119FACB920009A24D /* Tela-Tweetando.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-Tweetando.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,6 +267,7 @@
 			children = (
 				A893115F19F6EF6300D61A12 /* btoVoltar@2x.png */,
 				A8A5DD4519F6D30E006C94F4 /* pino@2x.png */,
+				A8A8E86919FEB17E00E48B4D /* pinoCarregamento@2x.png */,
 				A82ED8A919F1BB7E00D26EEF /* wifi@2x.png */,
 				A82ED8A719F1B98000D26EEF /* navigationBar@2x.png */,
 				A82ED89D19F1B7B900D26EEF /* logoTelaInicial@2x.png */,
@@ -498,6 +501,7 @@
 				A8A5DD4619F6D30E006C94F4 /* pino@2x.png in Resources */,
 				A82ED8A519F1B90C00D26EEF /* tabIconeMapa@2x.png in Resources */,
 				A82ED89B19F1B57B00D26EEF /* botaoDenunciar@2x.png in Resources */,
+				A8A8E86A19FEB17E00E48B4D /* pinoCarregamento@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
