@@ -78,7 +78,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabIconeDenuncia.png" id="42X-iU-hDf"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabIconeDenuncia.png" id="42X-iU-hDf">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="imageView" destination="ZVL-QL-FL4" id="Ekj-To-wjf"/>
                         <outlet property="imgBackTirarFoto" destination="kup-Xf-pAj" id="4NP-e8-6Zs"/>
@@ -183,7 +185,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabIconeMapa.png" id="OMJ-ov-Uyk"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabIconeMapa.png" id="OMJ-ov-Uyk">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="gL6-zE-yjn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -231,7 +235,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabIconeOlhoVivo.png" id="Xt9-W3-uzI"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabIconeOlhoVivo.png" id="Xt9-W3-uzI">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="TimeLineCETWebView" destination="g1k-MH-pG5" id="FDK-kc-h2L"/>
                         <outlet property="barraSuperior" destination="Szj-sw-NtD" id="VKY-bM-UaP"/>
