@@ -175,8 +175,8 @@
                             <view contentMode="scaleToFill" id="KgL-fL-Nca">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinoCarregamento.png" id="Iha-Vk-m17">
-                                        <rect key="frame" x="169" y="182" width="129" height="152"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinoCarregamento@2X.png" id="Iha-Vk-m17">
+                                        <rect key="frame" x="157" y="184" width="129" height="152"/>
                                     </imageView>
                                 </subviews>
                             </view>
@@ -223,7 +223,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="491"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="L4d-di-46X">
-                                        <rect key="frame" x="144" y="206" width="80" height="80"/>
+                                        <rect key="frame" x="120" y="206" width="80" height="80"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="deviceRGB"/>
@@ -255,9 +255,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="rhB-4q-u9X">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Si3-ks-MWV">
-                                <rect key="frame" x="20" y="20" width="280" height="120"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Si3-ks-MWV">
+                                <rect key="frame" x="20" y="20" width="280" height="100"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -311,7 +311,7 @@
         <image name="btoVoltar.png" width="12" height="20"/>
         <image name="logoTelaInicial.png" width="258" height="48"/>
         <image name="navigationBar.png" width="333" height="33"/>
-        <image name="pinoCarregamento.png" width="64" height="76"/>
+        <image name="pinoCarregamento@2X.png" width="667" height="1183"/>
         <image name="tabIconeDenuncia.png" width="36" height="33"/>
         <image name="tabIconeMapa.png" width="34" height="36"/>
         <image name="tabIconeOlhoVivo.png" width="36" height="36"/>
