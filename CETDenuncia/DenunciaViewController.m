@@ -107,6 +107,10 @@
          if ([SLComposeViewController isAvailableForServiceType: SLServiceTypeTwitter]){
              
              SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+             
+             if(self.imageView.image)
+                 NSLog(@"Tem imagem");
+             
              [tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
              [tweetSheet addImage:self.imageView.image];
              
@@ -140,8 +144,8 @@
 -(void)tirarFoto{
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    if([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]){
+        [imagePicker setSourceType: UIImagePickerControllerSourceTypeCamera];
     }
     else{
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
@@ -155,7 +159,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
-    self.imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.imageView.image = [info objectForKey: UIImagePickerControllerOriginalImage];
     [self.imageView setImage:self.imageView.image];
     
     [self dismissViewControllerAnimated:YES completion:nil];

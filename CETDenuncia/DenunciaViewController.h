@@ -16,7 +16,7 @@
 #import "MapaViewController.h"
 #import "TimeLineCETViewController.h"
 
-@interface DenunciaViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,MKMapViewDelegate>
+@interface DenunciaViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property NSString *nomeTwitter;
 @property NSString *imageString;
