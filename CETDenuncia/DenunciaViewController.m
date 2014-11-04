@@ -147,7 +147,7 @@
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     }
     
-    [imagePicker setDelegate:self];
+    [imagePicker setDelegate: self];
     [self presentViewController: imagePicker animated:YES completion:nil];
     
 }
@@ -175,6 +175,8 @@
     
     if (self.viewInformativo.hidden) {
         self.viewInformativo.hidden = NO;
+        self.outBtoDenunciar.enabled = NO;
+        self.tapAddFoto.enabled = NO;
         
         self.imageView.alpha = 0.3;
         self.imgBackground.alpha = 0.3;
@@ -189,6 +191,8 @@
     
     if(!self.viewInformativo.hidden){
         self.viewInformativo.hidden = YES;
+        self.outBtoDenunciar.enabled = YES;
+        self.tapAddFoto.enabled = YES;
     
         self.imageView.alpha = 1;
         self.imgBackground.alpha = 1;
