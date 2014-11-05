@@ -55,6 +55,7 @@
 		A860439119EDB5830093D155 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A860439019EDB5830093D155 /* TutorialViewController.m */; };
 		A88B65F01A0A92B800535A61 /* balaoInformativo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B65EF1A0A92B800535A61 /* balaoInformativo@2x.png */; };
 		A88B65F21A0A92E000535A61 /* btoRefresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B65F11A0A92E000535A61 /* btoRefresh@2x.png */; };
+		A88B65FF1A0AA48D00535A61 /* coneCarregamento@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B65FE1A0AA48D00535A61 /* coneCarregamento@2x.png */; };
 		A893115819F6DE3600D61A12 /* Tela-Denuncia.png in Resources */ = {isa = PBXBuildFile; fileRef = A893115519F6DE3600D61A12 /* Tela-Denuncia.png */; };
 		A893115919F6DE3600D61A12 /* Tela-Localizacao.png in Resources */ = {isa = PBXBuildFile; fileRef = A893115619F6DE3600D61A12 /* Tela-Localizacao.png */; };
 		A893115A19F6DE3600D61A12 /* Tela-OlhoVivo.png in Resources */ = {isa = PBXBuildFile; fileRef = A893115719F6DE3600D61A12 /* Tela-OlhoVivo.png */; };
@@ -148,6 +149,7 @@
 		A860439019EDB5830093D155 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		A88B65EF1A0A92B800535A61 /* balaoInformativo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "balaoInformativo@2x.png"; sourceTree = "<group>"; };
 		A88B65F11A0A92E000535A61 /* btoRefresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btoRefresh@2x.png"; sourceTree = "<group>"; };
+		A88B65FE1A0AA48D00535A61 /* coneCarregamento@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coneCarregamento@2x.png"; sourceTree = "<group>"; };
 		A893115519F6DE3600D61A12 /* Tela-Denuncia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-Denuncia.png"; sourceTree = "<group>"; };
 		A893115619F6DE3600D61A12 /* Tela-Localizacao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-Localizacao.png"; sourceTree = "<group>"; };
 		A893115719F6DE3600D61A12 /* Tela-OlhoVivo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tela-OlhoVivo.png"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				A893115F19F6EF6300D61A12 /* btoVoltar@2x.png */,
 				A8A5DD4519F6D30E006C94F4 /* pino@2x.png */,
 				A8A8E86919FEB17E00E48B4D /* pinoCarregamento@2x.png */,
+				A88B65FE1A0AA48D00535A61 /* coneCarregamento@2x.png */,
 				A82ED8A919F1BB7E00D26EEF /* wifi@2x.png */,
 				A82ED8A719F1B98000D26EEF /* navigationBar@2x.png */,
 				A82ED89D19F1B7B900D26EEF /* logoTelaInicial@2x.png */,
@@ -496,6 +499,7 @@
 				0BB77D4919CCA4DA00343AC1 /* InfoPlist.strings in Resources */,
 				A8B37FC019FAC57B0009A24D /* default.gpx in Resources */,
 				A8B37FC219FACB920009A24D /* Tela-Tweetando.png in Resources */,
+				A88B65FF1A0AA48D00535A61 /* coneCarregamento@2x.png in Resources */,
 				A82ED8A619F1B90C00D26EEF /* tabIconeOlhoVivo@2x.png in Resources */,
 				A82ED8A019F1B82C00D26EEF /* botaoFoto@2x.png in Resources */,
 				A82ED89A19F1B57B00D26EEF /* background.png in Resources */,

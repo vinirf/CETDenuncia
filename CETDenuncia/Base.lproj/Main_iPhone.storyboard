@@ -78,6 +78,9 @@
                                     </label>
                                 </subviews>
                             </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coneCarregamento@2x.png" id="zGp-l1-Fy6">
+                                <rect key="frame" x="97" y="208" width="129" height="152"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -88,6 +91,7 @@
                         <outlet property="imageView" destination="ZVL-QL-FL4" id="Ekj-To-wjf"/>
                         <outlet property="imgBackTirarFoto" destination="kup-Xf-pAj" id="4NP-e8-6Zs"/>
                         <outlet property="imgBackground" destination="ER0-Rn-tbc" id="TR2-su-bMY"/>
+                        <outlet property="imgConeCarregamento" destination="zGp-l1-Fy6" id="Sh4-k2-2cO"/>
                         <outlet property="outBtoDenunciar" destination="Q7r-DF-BRB" id="WM3-qJ-sOj"/>
                         <outlet property="viewInformativo" destination="gyK-fT-u1k" id="HdJ-nY-or2"/>
                     </connections>
@@ -318,6 +322,7 @@
         <image name="botaoDenunciar.png" width="259" height="65"/>
         <image name="botaoFoto.png" width="258" height="222"/>
         <image name="btoRefresh.png" width="21" height="18"/>
+        <image name="coneCarregamento@2x.png" width="1024" height="768"/>
         <image name="logoTelaInicial.png" width="258" height="48"/>
         <image name="navigationBar.png" width="333" height="33"/>
         <image name="pinoCarregamento@2X.png" width="667" height="1183"/>

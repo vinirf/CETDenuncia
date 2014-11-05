@@ -60,12 +60,38 @@
     [super viewDidDisappear: animated];
 }
 
+////////////////////////////////////////////////////////////////////////////////////// ANIMAÇÃO //////////////////////////////////////////////////////////////////////////////////////
+
+
+-(void)addAnimacaoDeCarregamentoNoTweet{
+    
+    CABasicAnimation *imageRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    imageRotation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 * 2 * 1 ];
+    imageRotation.duration = 5;
+    imageRotation.repeatCount = INFINITY;
+    imageRotation.removedOnCompletion = NO;
+    imageRotation.autoreverses= YES;
+    imageRotation.fillMode = kCAFillModeForwards;
+    
+    self.imgConeCarregamento.hidden = NO;
+    [self addTansparenciaNasViewsEBlockDosBotoes];
+    [self.imgConeCarregamento.layer addAnimation: imageRotation forKey:@"animacaoRotacao"];
+}
+
+-(void)removeAnimacaoDeCarregamentoNoTweet{
+    
+    self.imgConeCarregamento.hidden = YES;
+    [self removeTransparenciaNasViewsEBlockDosBotoes];
+    [self.imgConeCarregamento.layer removeAnimationForKey:@"animacaoMovimento"];
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////// TWETAR //////////////////////////////////////////////////////////////////////////////////////
 
 
 - (IBAction)buttonTwetar:(id)sender{
+    
+    [self addAnimacaoDeCarregamentoNoTweet];
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -93,6 +119,8 @@
          
          //Só permite o tweet se o usuário estiver em SP
          if (![placemark.locality isEqualToString:@"São Paulo"]) {
+             
+             [self removeAnimacaoDeCarregamentoNoTweet];
              UIAlertView *alertView = [[UIAlertView alloc]
                                        initWithTitle:@"Local inválido"
                                        message:@"Você não pode enviar um tweet para a CETSP fora da cidade de São Paulo, ou não permitiu acesso a localização."
@@ -118,13 +146,13 @@
              NSString *endereco = [NSString stringWithFormat:@"%@%@%@%@",self.nomeTwitter,@" ",[Usuario sharedManager].localizacao,@", "];
              [tweetSheet setInitialText: endereco];
              
-             NSLog(@"texto = %@",endereco);
-             NSLog(@"usuario = %@",[Usuario sharedManager].localizacao);
-             
+             [self removeAnimacaoDeCarregamentoNoTweet];
              [self presentViewController: tweetSheet animated:YES completion:nil];
              
          }
          else{
+             
+             [self removeAnimacaoDeCarregamentoNoTweet];
              UIAlertView *alertView = [[UIAlertView alloc]
                                        initWithTitle:@"Desculpe"
                                        message:@"Você não pode enviar um tweet agora, verifique se seu dispositivo está conectado à internet e se você tem pelo menos uma conta do Twitter configurada."
@@ -179,13 +207,7 @@
     
     if (self.viewInformativo.hidden) {
         self.viewInformativo.hidden = NO;
-        self.outBtoDenunciar.enabled = NO;
-        self.tapAddFoto.enabled = NO;
-        
-        self.imageView.alpha = 0.3;
-        self.imgBackground.alpha = 0.3;
-        self.imgBackTirarFoto.alpha = 0.3;
-        self.outBtoDenunciar.alpha = 0.3;
+        [self addTansparenciaNasViewsEBlockDosBotoes];
     }else{
         [self voltarViewEstadoOriginal];
     }
@@ -195,14 +217,29 @@
     
     if(!self.viewInformativo.hidden){
         self.viewInformativo.hidden = YES;
-        self.outBtoDenunciar.enabled = YES;
-        self.tapAddFoto.enabled = YES;
-    
-        self.imageView.alpha = 1;
-        self.imgBackground.alpha = 1;
-        self.imgBackTirarFoto.alpha = 0.4;
-        self.outBtoDenunciar.alpha = 1;
+        [self removeTransparenciaNasViewsEBlockDosBotoes];
     }
 }
+
+-(void)addTansparenciaNasViewsEBlockDosBotoes{
+    self.outBtoDenunciar.enabled = NO;
+    self.tapAddFoto.enabled = NO;
+    
+    self.imageView.alpha = 0.3;
+    self.imgBackground.alpha = 0.3;
+    self.imgBackTirarFoto.alpha = 0.3;
+    self.outBtoDenunciar.alpha = 0.3;
+}
+
+-(void)removeTransparenciaNasViewsEBlockDosBotoes{
+    self.outBtoDenunciar.enabled = YES;
+    self.tapAddFoto.enabled = YES;
+    
+    self.imageView.alpha = 1;
+    self.imgBackground.alpha = 1;
+    self.imgBackTirarFoto.alpha = 0.4;
+    self.outBtoDenunciar.alpha = 1;
+}
+
 
 @end
