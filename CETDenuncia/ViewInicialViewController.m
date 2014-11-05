@@ -57,9 +57,9 @@
     [self.locationManager startUpdatingLocation];
     
     //Se for uma versão igual o maior do iOS8 requer autorização especial
-    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-        [self.locationManager requestAlwaysAuthorization];
-    }
+//    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+//        [self.locationManager requestAlwaysAuthorization];
+//    }
     [self.locationManager startUpdatingLocation];
     
 //    self.locationManager.distanceFilter = kCLDistanceFilterNone;
