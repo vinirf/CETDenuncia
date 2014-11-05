@@ -19,7 +19,6 @@
     //Conta CET
     self.nomeTwitter = @"@CETSP_";
     
-    
     //Gesture para voltar a view ao estado normal quando o informativo estiver em destaque
     self.tapVoltarView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(voltarViewEstadoOriginal)];
     self.tapVoltarView.numberOfTouchesRequired = 1;
@@ -136,11 +135,12 @@
              
              SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
              
+             //Verificar se no picker.imagem guarda a imagem
              if(self.imageView.image)
                  NSLog(@"Tem imagem");
              
              [tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
-             [tweetSheet addImage:self.imageView.image];
+             [tweetSheet addImage: self.imageView.image];
              
              
              NSString *endereco = [NSString stringWithFormat:@"%@%@%@%@",self.nomeTwitter,@" ",[Usuario sharedManager].localizacao,@", "];

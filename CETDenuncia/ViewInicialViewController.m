@@ -22,7 +22,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
+
     //Animação de entrada com o logo do app
     CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
     fadeAnim.fromValue = [NSNumber numberWithFloat:0.0];
