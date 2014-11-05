@@ -61,7 +61,6 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    
     //Arredonda background da imagem da foto
     [[self.botaoComecar layer] setCornerRadius: 10];
     
