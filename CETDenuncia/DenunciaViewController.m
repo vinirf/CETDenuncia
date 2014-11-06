@@ -43,6 +43,8 @@
     self.viewInformativo.layer.shadowRadius = 3.0f;
     self.viewInformativo.layer.shadowOpacity = 1.0f;
     
+    self.imageView.tag = 0;
+    
 }
 
 
@@ -140,7 +142,8 @@
                  NSLog(@"Tem imagem");
              
              [tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
-             [tweetSheet addImage: self.imageView.image];
+             
+             if(self.imageView.tag == 1)[tweetSheet addImage: self.imageView.image];
              
              
              NSString *endereco = [NSString stringWithFormat:@"%@%@%@%@",self.nomeTwitter,@" ",[Usuario sharedManager].localizacao,@", "];
@@ -180,6 +183,7 @@
     }
     
     [imagePicker setDelegate: self];
+    self.imageView.tag = 1;
     [self presentViewController: imagePicker animated:YES completion:nil];
     
 }
@@ -196,6 +200,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{    
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    self.imageView.tag = 0;
 }
 
 
