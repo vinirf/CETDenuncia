@@ -29,7 +29,6 @@
 //PARSE HTML
 -(void)serializaDadosSiteCET;
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *imgPinoCarregamento;
 @property (weak, nonatomic) IBOutlet UIView *viewCarregamento;
 
