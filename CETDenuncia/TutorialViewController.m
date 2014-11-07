@@ -41,9 +41,6 @@
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
          [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
          
-         NSLog(@"view tuto = %@",[Usuario sharedManager].localizacao);
-
-         
      }];
 
     

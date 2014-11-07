@@ -317,7 +317,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background.png" width="667" height="1183"/>
+        <image name="background.png" width="333" height="591"/>
         <image name="balaoInformativo.png" width="153" height="181"/>
         <image name="botaoDenunciar.png" width="259" height="65"/>
         <image name="botaoFoto.png" width="258" height="222"/>

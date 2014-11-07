@@ -123,12 +123,7 @@
              
              SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
              
-             //Verificar se no picker.imagem guarda a imagem
-             if(self.imageView.image)
-                 NSLog(@"Tem imagem");
-             
              [tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
-             
              if(self.imageView.tag == 1)[tweetSheet addImage: self.imageView.image];
              
              
