@@ -13,13 +13,6 @@
 
 @implementation TutorialViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 -(void)localizar{
     
     //Localização
@@ -57,7 +50,6 @@
 }
 
 
-
 - (void)viewDidLoad{
     [super viewDidLoad];
     
@@ -83,10 +75,6 @@
     [self.view addSubview: self.tutorialViewController.view];
     [self.tutorialViewController didMoveToParentViewController:self];
     
-}
-
-- (void)didReceiveMemoryWarning{
-    [super didReceiveMemoryWarning];
 }
 
 

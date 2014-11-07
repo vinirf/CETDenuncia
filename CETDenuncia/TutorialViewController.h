@@ -12,17 +12,18 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Usuario.h"
 
-@interface TutorialViewController : UIViewController <UIPageViewControllerDataSource,CLLocationManagerDelegate>
+@interface TutorialViewController : UIViewController <UIPageViewControllerDataSource, CLLocationManagerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *botaoComecar;
 @property UIPageViewController *tutorialViewController;
 @property NSArray *pageTitles;
 @property NSArray *pageImages;
 
+//Gerenciador de Localização
 @property CLLocationManager *locationManager;
 
-@property (weak, nonatomic) IBOutlet UIButton *botaoComecar;
 
-//PAGES
+//Métodos Delegate do Pages
 -(PageContentViewController *)viewControllerAtIndex:(NSUInteger)index;
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController;
 -(UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController;

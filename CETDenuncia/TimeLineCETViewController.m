@@ -13,14 +13,6 @@
 
 @implementation TimeLineCETViewController
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewDidLoad{
     [super viewDidLoad];
 
@@ -29,14 +21,6 @@
     
     self.pararRepeticaoProtocolo = YES;
     [self carregaComponentesIniciaisTwiter];
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear: animated];
-}
-
-- (void)didReceiveMemoryWarning{
-    [super didReceiveMemoryWarning];
 }
 
 //Sobrepõe a barra de status

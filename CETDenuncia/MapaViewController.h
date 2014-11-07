@@ -14,11 +14,10 @@
 
 @interface MapaViewController : UIViewController <MKMapViewDelegate>
 
-
--(void)carregaComponentesIniciaisMapa;
-
 //VIEW
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPinoCarregamento;
+@property (weak, nonatomic) IBOutlet UIView *viewCarregamento;
 
 //MAPA
 -(void)zoomToUserRegion;
@@ -28,9 +27,6 @@
 
 //PARSE HTML
 -(void)serializaDadosSiteCET;
-
-@property (weak, nonatomic) IBOutlet UIImageView *imgPinoCarregamento;
-@property (weak, nonatomic) IBOutlet UIView *viewCarregamento;
-
+-(void)carregaComponentesIniciaisMapa;
 
 @end

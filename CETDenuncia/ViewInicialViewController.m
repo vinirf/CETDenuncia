@@ -13,13 +13,6 @@
 
 @implementation ViewInicialViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {}
-    return self;
-}
-
 -(void)viewDidLoad{
     [super viewDidLoad];
 
@@ -36,10 +29,6 @@
     //Guarda o local (rua, cidade .. etc) e chama o tutorial ou tela de denuncia
     [self performSelector:@selector(chamaTabBarController) withObject:NULL afterDelay:0.0];
     
-}
-
-- (void)didReceiveMemoryWarning{
-    [super didReceiveMemoryWarning];
 }
 
 //Mostra view com icones de sem conexão
@@ -73,7 +62,7 @@
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     
-    //Verificca se há conexão com a internet
+    //Verifica se há conexão com a internet
     if (networkStatus == NotReachable) {
         [self semConexaoComInternet];
     
@@ -88,9 +77,6 @@
                      
             CLPlacemark *placemark = [placemarks objectAtIndex:0];
             [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",placemark.name];
-                     
-            NSLog(@"view inicial = %@",[Usuario sharedManager].localizacao);
-            
                 
             if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialVisto"] == NO) {
                 [self tutorialVisualizado];

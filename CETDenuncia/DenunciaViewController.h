@@ -25,7 +25,6 @@
 @property UITapGestureRecognizer *tapAddFoto;
 @property UITapGestureRecognizer *tapVoltarView;
 
-
 //VIEWS
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackTirarFoto;
@@ -39,7 +38,6 @@
 -(void)tirarFoto;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
-
 
 
 @end

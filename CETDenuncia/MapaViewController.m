@@ -14,39 +14,17 @@
 
 
 //VIEW ------------------------------------------------------------------------------
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self){}
-    return self;
-}
-
--(void)carregaComponentesIniciaisMapa{
-    
-    //Configura a localização atual como a localização do usuário
-    [self.mapa setDelegate: self];
-    self.mapa.showsUserLocation = YES;
-    [self viewWillLayoutSubviews];
-    
- 
-}
-
-- (void)viewDidLoad{
-    [super viewDidLoad];
-}
 
 -(void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear: animated];
-    
     [self carregaComponentesIniciaisMapa];
-    
     
     if ([[Usuario sharedManager].localizacao  rangeOfString: @"Oceano Atlântico Sul"].location !=  NSNotFound){
         [self zoomToPinoRegionPadrao];
     }else{
         [self zoomToUserRegion];
     }
-    
     
     self.viewCarregamento.hidden = NO;
     [self addAnimacao];
@@ -55,8 +33,13 @@
     
 }
 
-- (void)didReceiveMemoryWarning{
-    [super didReceiveMemoryWarning];
+-(void)carregaComponentesIniciaisMapa{
+    
+    //Configura a localização atual como a localização do usuário
+    [self.mapa setDelegate: self];
+    self.mapa.showsUserLocation = YES;
+    
+    [self viewWillLayoutSubviews];
 }
 
 

@@ -16,9 +16,10 @@
 
 @interface ViewInicialViewController : UIViewController <UIAlertViewDelegate, CLLocationManagerDelegate>
 
+//Gerenciador de Localização
 @property CLLocationManager *locationManager;
 
-//VIEWS
+//Views
 @property (weak, nonatomic) IBOutlet UIImageView *iconeSemConexao;
 @property (weak, nonatomic) IBOutlet UILabel *labelSemConexao;
 
