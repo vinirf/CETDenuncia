@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface Usuario : NSObject
+@interface Usuario : NSObject <CLLocationManagerDelegate>
 
 @property CLLocationCoordinate2D locUsuario;
 @property NSString *nome;
@@ -17,6 +17,9 @@
 
 +(Usuario*)sharedManager;
 -(void)setaPosicaoUsuario:(CLLocationCoordinate2D)posUsuario;
+
+@property CLLocationManager *locationManager;
+-(void)atualizaLocalizacao;
 
 
 @end

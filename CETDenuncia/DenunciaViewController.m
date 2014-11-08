@@ -11,7 +11,16 @@
 @interface DenunciaViewController ()
 @end
 
+
 @implementation DenunciaViewController
+
+-(void)viewWillAppear:(BOOL)animated{
+   self.imageView.tag = 0;
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    self.imageView.tag = 0;
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -42,8 +51,6 @@
     self.viewInformativo.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
     self.viewInformativo.layer.shadowRadius = 3.0f;
     self.viewInformativo.layer.shadowOpacity = 1.0f;
-    
-    self.imageView.tag = 0;
     
 }
 
@@ -80,13 +87,9 @@
     
     [self addAnimacaoDeCarregamentoNoTweet];
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager startUpdatingLocation];
+    [[Usuario sharedManager]atualizaLocalizacao];
     
-    [[Usuario sharedManager]setaPosicaoUsuario: self.locationManager.location.coordinate];
+    NSLog(@"vv = %f",[Usuario sharedManager].locationManager.location.coordinate.latitude);
     
     CLGeocoder *ceo = [[CLGeocoder alloc]init];
     CLLocationCoordinate2D coord = [[Usuario sharedManager]locUsuario];
@@ -103,6 +106,8 @@
          //Seta localizacao do Usuario (Cidade,Rua)
          [Usuario sharedManager].localizacao = [NSString stringWithFormat:@"%@%@%@",placemark.subLocality,@", ",string.firstObject];
          
+         NSLog(@"localozaca- = %@",[Usuario sharedManager].localizacao);
+         
          
          //Só permite o tweet se o usuário estiver em SP
          if (![placemark.locality isEqualToString:@"São Paulo"]) {
@@ -116,22 +121,25 @@
                                        otherButtonTitles:nil];
              [alertView show];
              return;
+             
          }
          
          
          if ([SLComposeViewController isAvailableForServiceType: SLServiceTypeTwitter]){
              
-             SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+             self.tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
              
-             [tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
-             if(self.imageView.tag == 1)[tweetSheet addImage: self.imageView.image];
+             [self.tweetSheet setInitialText:@"Tweeting from CETDenuncia"];
+             
+             //if(self.imageView.tag == 1)
+                 [self.tweetSheet addImage: self.imageView.image];
              
              
              NSString *endereco = [NSString stringWithFormat:@"%@%@%@%@",self.nomeTwitter,@" ",[Usuario sharedManager].localizacao,@", "];
-             [tweetSheet setInitialText: endereco];
+             [self.tweetSheet setInitialText: endereco];
              
              [self removeAnimacaoDeCarregamentoNoTweet];
-             [self presentViewController: tweetSheet animated:YES completion:nil];
+             [self presentViewController: self.tweetSheet animated:YES completion:nil];
              
          }
          else{
@@ -154,18 +162,20 @@
 
 
 -(void)tirarFoto{
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    [self.imagePicker setDelegate:self];
+    [self.imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self.imagePicker setAllowsEditing:YES];
     
     if([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]){
-        [imagePicker setSourceType: UIImagePickerControllerSourceTypeCamera];
+        [self.imagePicker setSourceType: UIImagePickerControllerSourceTypeCamera];
     }
     else{
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [self.imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     }
     
-    [imagePicker setDelegate: self];
     self.imageView.tag = 1;
-    [self presentViewController: imagePicker animated:YES completion:nil];
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
     
 }
 
@@ -182,6 +192,7 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{    
     [picker dismissViewControllerAnimated:YES completion:NULL];
     self.imageView.tag = 0;
+    NSLog(@"oi");
 }
 
 

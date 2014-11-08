@@ -46,7 +46,9 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 
-    [self.mapa removeAnnotations:[DataBaseCoordenada sharedManager].listaAnotation];
+    for(MKPointAnnotation *ponto in [DataBaseCoordenada sharedManager].listaAnotation){
+        [self.mapa removeAnnotation:ponto];
+    }
     
     [[DataBaseCoordenada sharedManager].listaAnotation removeAllObjects];
     

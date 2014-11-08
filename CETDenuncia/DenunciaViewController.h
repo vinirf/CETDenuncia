@@ -21,9 +21,11 @@
 @property NSString *nomeTwitter;
 @property NSString *imageString;
 @property MKMapView *mapa;
-@property CLLocationManager *locationManager;
 @property UITapGestureRecognizer *tapAddFoto;
 @property UITapGestureRecognizer *tapVoltarView;
+@property UIImagePickerController *imagePicker;
+@property SLComposeViewController *tweetSheet;
+
 
 //VIEWS
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;

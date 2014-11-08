@@ -33,5 +33,20 @@
     self.locUsuario = posUsuario;
 }
 
+-(void)atualizaLocalizacao{
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    [self.locationManager requestAlwaysAuthorization];
+    
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+    
+    [[Usuario sharedManager]setaPosicaoUsuario: [Usuario sharedManager].locationManager.location.coordinate];
+    
+    
+}
 
 @end

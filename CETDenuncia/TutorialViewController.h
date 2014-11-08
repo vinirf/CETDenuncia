@@ -20,7 +20,7 @@
 @property NSArray *pageImages;
 
 //Gerenciador de Localização
-@property CLLocationManager *locationManager;
+
 
 
 //Métodos Delegate do Pages
